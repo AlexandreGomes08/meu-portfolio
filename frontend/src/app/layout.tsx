@@ -1,13 +1,18 @@
 import type { Metadata } from "next"
-import { Montserrat } from "next/font/google"
+import { Montserrat, Kalam } from "next/font/google"
 import "./globals.css"
 
 export const metadata: Metadata = {
-	title: "Meu Portfolio",
+	title: "Alexandre Gomes - Portfolio",
 	description: "Portfólio de projetos de desenvolvimento",
 }
 
 const fonte = Montserrat({
+	subsets: ["latin"],
+})
+
+export const fonteKalam = Kalam({
+	weight: "400",
 	subsets: ["latin"],
 })
 
