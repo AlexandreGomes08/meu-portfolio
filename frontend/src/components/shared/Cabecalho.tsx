@@ -9,7 +9,7 @@ import { FiMenu, FiX } from "react-icons/fi"
 export default function Cabecalho() {
 	const [menuAberto, setMenuAberto] = useState(false)
 	return (
-		<header className="w-full flex items-center h-16 sm:h-20 shadow-2xl">
+		<header className="bg-neutral-900 w-full flex items-center h-16 sm:h-20 shadow-2xl sm:fixed z-20">
 			<Container className="flex-1 flex justify-between items-center">
 				<div className="flex items-center gap-10 w-[46px] sm:w-[60px]">
 					<Link href="/" className="">
@@ -43,9 +43,11 @@ export default function Cabecalho() {
 					</div>
 				</div>
 				{menuAberto && (
-					<div className="absolute top-15 right-0 left-auto w-[80%] h-full bg-gray-900 text-white flex flex-col items-end gap-5 p-5 sm:hidden">
+					<div className="absolute top-16 right-0 left-auto w-[82%] h-full bg-neutral-900 shadow-2xl text-zinc-100 flex flex-col items-end  text-base gap-5 p-5 sm:hidden z-50">
 						<Menu />
-						<div className="flex gap-4">
+						<div className="w-full h-[1px] bg-gray-500"></div>
+
+						<div className="flex gap-4 pt-4">
 							<Link href="https://github.com/AlexandreGomes08" target="_blank">
 								<Image src="/git.svg" alt="Git" width={30} height={0} />
 							</Link>

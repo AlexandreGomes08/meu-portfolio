@@ -5,7 +5,7 @@ import { usePathname } from "next/navigation"
 export default function Menu() {
 	const caminho = usePathname()
 	return (
-		<nav className="flex flex-col sm:flex-row gap-6">
+		<nav className="flex flex-col text-base items-end sm:items-normal sm:flex-row gap-8 sm:gap-7 pb-4 sm:pb-0">
 			<MenuItem href="/" selecionado={caminho === "/"}>
 				Home
 			</MenuItem>
@@ -31,7 +31,7 @@ function MenuItem(props: {
 	return (
 		<Link href={props.href} target={props.novaAba ? "_blank" : "_self"}>
 			<span
-				className={`flex items-center gap-2 text-base hover:text-cyan-400 
+				className={`flex items-center gap-2 text-base hover-gradient-text
                 ${props.selecionado ? "font-bold text-zinc-100" : "text-zinc-300"}`}
 			>
 				{props.children}
