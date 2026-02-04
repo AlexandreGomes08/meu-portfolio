@@ -1,0 +1,19 @@
+name: Fly Deploy n8n
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - n8n/**
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: superfly/flyctl-actions/setup-flyctl@master
+      - run: |
+          cd n8n
+          flyctl deploy --remote-only
+        env:
+          FLY_API_TOKEN: ${{ secrets.FLY_API_TOKEN }}
