@@ -1,7 +1,8 @@
-POST https://alexandregomes.app.n8n.cloud/webhook/assistente-pessoal
+# Teste de Assistente Pessoal n8n
+POST https://meu-portfolio-n8n.fly.dev/webhook/assistente-pessoal
 Content-Type: application/json
 
 {
     "chatId": "1234567",
-    "mensagem": "Você trabalha com React Native?"
+    "mensagem": "Você trabalha com Nestjs?"
 }
