@@ -7,7 +7,6 @@ import Image from "next/image"
 import Link from "next/link"
 import { useEffect, useState } from "react"
 import Cabecalho from "../shared/Cabecalho"
-import DustParticles from "./DustParticles"
 
 const TypingEffect = ({ text, delay = 0 }: { text: string; delay?: number }) => {
 	const [displayedText, setDisplayedText] = useState("")
@@ -50,18 +49,15 @@ export default function Principal() {
 	}, [])
 
 	return (
-		<div className="relative min-h-screen bg-neutral-950 overflow-hidden flex flex-col">
-			{/* Background Effects */}
-			<div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none z-0">
-				<DustParticles />
+		<div className="relative min-h-screen flex flex-col overflow-hidden">
+			<div className="absolute top-0 left-0 w-full h-full pointer-events-none z-0">
 				<div className="absolute bottom-[10%] left-[-5%] w-[400px] h-[400px] bg-purple-600/10 rounded-full blur-[100px]" />
 			</div>
 
 			<Cabecalho />
 
-			<main className="flex-1 flex items-center justify-center relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 sm:py-0">
+			<main className="flex-1 flex items-center justify-center relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 				<div className="flex flex-col-reverse lg:flex-row items-center justify-between w-full gap-12 lg:gap-8">
-					{/* Text Section */}
 					<div className="flex-1 flex flex-col items-center lg:items-start text-center lg:text-left space-y-6">
 						<motion.h1
 							initial={{ opacity: 0, y: 20 }}
@@ -103,14 +99,12 @@ export default function Principal() {
 						</motion.div>
 					</div>
 
-					{/* Image Section */}
 					<motion.div
 						initial={{ opacity: 0, scale: 0.9 }}
 						animate={{ opacity: 1, scale: 1 }}
 						transition={{ duration: 0.7 }}
 						className="relative flex items-center justify-center group"
 					>
-						{/* Spotlight Glow behind the photo (formerly top-right corner glow) */}
 						<div className="absolute inset-0 -m-12 bg-blue-600/20 rounded-full blur-[80px] animate-pulse pointer-events-none group-hover:bg-blue-500/30 transition-colors duration-700" />
 						
 						<div className="relative w-56 h-56 sm:w-72 sm:h-72 lg:w-85 lg:h-85 rounded-full overflow-hidden shadow-2xl transition-transform duration-500 ">
@@ -126,7 +120,6 @@ export default function Principal() {
 				</div>
 			</main>
 
-			{/* Scroll Indicator */}
 			<motion.div
 				initial={{ opacity: 0 }}
 				animate={{ opacity: isVisible ? 0.4 : 0 }}
@@ -144,6 +137,7 @@ export default function Principal() {
 					<ChevronDown size={28} className="text-zinc-400" />
 				</motion.div>
 			</motion.div>
+			
 		</div>
 	)
 }
