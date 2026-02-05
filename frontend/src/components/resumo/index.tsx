@@ -1,5 +1,4 @@
-import { fonteKalam } from "@/app/fonts"
-
+import { fontJetBrainsMono, fontSatoshi } from "@/app/fonts"
 import Image from "next/image"
 import { FaDocker, FaReact } from "react-icons/fa"
 import { IoLogoJavascript } from "react-icons/io5"
@@ -7,67 +6,63 @@ import { RiNextjsFill, RiTailwindCssFill } from "react-icons/ri"
 import { SiNestjs } from "react-icons/si"
 
 export default async function Resumo() {
-
 	return (
-		<section className="relative py-16 px-4 sm:px-6 overflow-hidden">
-			<div className="relative z-10 max-w-[1400px] mx-auto">
+		<section className="relative py-24 px-4 sm:px-6 overflow-hidden">
+			<div className="relative z-10 max-w-[1200px] mx-auto">
 				<div 
-					className="bg-[#0f0f12]/80 backdrop-blur-sm border border-white/5 rounded-[28px] overflow-hidden p-8 sm:p-12 lg:p-16 shadow-2xl"
+					className="bg-[#0f0f12]/80 backdrop-blur-md border border-white/[0.04] rounded-[32px] overflow-hidden px-8 py-16 sm:px-16 sm:py-24 shadow-2xl flex flex-col items-center text-center"
 				>
-					<div className="flex flex-col lg:flex-row items-center justify-between gap-12 lg:gap-16">
-						<div data-aos="fade-up" className="flex-1 flex justify-center lg:justify-start">
-							<div className="relative group">
-								<div className="absolute inset-0 bg-purple-500/10 rounded-full blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
-								<Image
-									src="/Programming-pana.png"
-									alt="About Me Illustration"
-									width={450}
-									height={0}
-									className="relative z-10 w-full max-w-[320px] sm:max-w-[450px] drop-shadow-2xl"
-								/>
-							</div>
+					<div data-aos="fade-up" className="max-w-3xl flex flex-col items-center space-y-12">
+						{/* Skill Icons - Monochrome & Premium Micro-interactions */}
+						<div className="flex gap-6 sm:gap-8 flex-wrap justify-center opacity-40 hover:opacity-100 transition-opacity duration-500">
+							<SkillIcon icon={<IoLogoJavascript size={24} />} label="JavaScript" />
+							<SkillIcon icon={<FaReact size={24} />} label="React" />
+							<SkillIcon icon={<RiNextjsFill size={26} />} label="Next.js" />
+							<SkillIcon icon={<RiTailwindCssFill size={24} />} label="Tailwind CSS" />
+							<SkillIcon icon={<SiNestjs size={24} />} label="NestJS" />
+							<SkillIcon icon={<FaDocker size={24} />} label="Docker" />
 						</div>
 
-						<div data-aos="fade-up" className="flex-1">
-							<div className="max-w-xl flex flex-col space-y-6">
-								<div className="flex gap-4 flex-wrap">
-									<IoLogoJavascript size={28} className="text-zinc-500 hover:text-yellow-400 transition-colors" />
-									<FaReact size={28} className="text-zinc-500 hover:text-blue-400 transition-colors" />
-									<RiNextjsFill size={28} className="text-zinc-500 hover:text-white transition-colors" />
-									<RiTailwindCssFill size={28} className="text-zinc-500 hover:text-sky-400 transition-colors" />
-									<SiNestjs size={28} className="text-zinc-500 hover:text-red-500 transition-colors" />
-									<FaDocker size={28} className="text-zinc-500 hover:text-blue-500 transition-colors" />
-								</div>
+						<div className="space-y-6">
+							<h1 className={`${fontJetBrainsMono.className} text-sm font-medium text-zinc-500 tracking-[0.2em] uppercase`}>
+								About me
+							</h1>
 
-								<h1 className={`${fonteKalam.className} text-xl font-bold text-purple-400 tracking-wide uppercase`}>
-									About me
-								</h1>
-
-								<h2 className="text-zinc-100 text-2xl sm:text-3xl font-semibold leading-tight">
-									I’m a passionate software developer looking for my first international opportunity.
-								</h2>
-
-								<div className="space-y-4 text-zinc-400 text-base sm:text-lg leading-relaxed">
-									<p>
-										Beyond coding, I&apos;m a coffee enthusiast, a cat lover, and a self-taught
-										artist who enjoys spending my free time doodling.
-									</p>
-									<p>
-										I am currently seeking opportunities to bring my skills and enthusiasm to a tech company in the
-										United States or Europe and am excited about the prospect of relocating
-										to pursue new challenges.
-									</p>
-								</div>
-
-								<button className="animated-button flex items-center justify-center gap-2 text-white font-medium w-fit min-w-[180px] h-[56px] rounded-full border border-zinc-700/50 bg-neutral-800/50 backdrop-blur-sm hover:bg-neutral-800 hover:border-zinc-500 transition-all px-8">
-									<Image src="/ReadCvLogo.png" alt="Resume Icon" width={22} height={0} />
-									My resume
-								</button>
-							</div>
+							<h2 className={`${fontSatoshi.className} text-zinc-100 text-3xl sm:text-5xl font-semibold leading-tight tracking-tight`}>
+								I am a passionate software developer looking for opportunity.
+							</h2>
 						</div>
+
+						<div className={`${fontSatoshi.className} space-y-6 text-zinc-400 text-lg sm:text-xl leading-relaxed max-w-2xl font-light`}>
+							<p>
+								Beyond coding, I&apos;m a coffee enthusiast, a cat lover, and a self-taught
+								artist who enjoys spending my free time doodling.
+							</p>
+							<p>
+								I am currently seeking opportunities to bring my skills and enthusiasm to a tech company in the
+								United States or Europe and am excited about the prospect of relocating
+								to pursue new challenges.
+							</p>
+						</div>
+
+						<button className="group relative flex items-center justify-center gap-3 text-zinc-200 font-medium h-[58px] rounded-full border border-white/[0.08] bg-white/[0.02] backdrop-blur-md hover:bg-white/[0.05] hover:border-white/[0.15] hover:text-white transition-all duration-300 px-10">
+							<Image src="/ReadCvLogo.png" alt="Resume Icon" width={20} height={20} className="opacity-70 group-hover:opacity-100 transition-opacity" />
+							<span>My resume</span>
+						</button>
 					</div>
 				</div>
 			</div>
 		</section>
+	)
+}
+
+function SkillIcon({ icon, label }: { icon: React.ReactNode; label: string }) {
+	return (
+		<div 
+			className="text-zinc-500 hover:text-zinc-200 hover:-translate-y-1 transition-all duration-300 ease-out cursor-default"
+			title={label}
+		>
+			{icon}
+		</div>
 	)
 }
