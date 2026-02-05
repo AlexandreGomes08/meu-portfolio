@@ -41,7 +41,7 @@ export default function Cabecalho() {
 							style={{ stroke: "url(#logo-gradient)" }} 
 						/>
 						
-						<span className={`${fontSatoshi.className} text-white/90 text-xl sm:text-2xl tracking-tighter transition-colors duration-300 group-hover:text-zinc-200`}>
+						<span className={`${fontSatoshi.className} text-white/90 text-xl sm:text-2xl tracking-tighter transition-colors duration-300 group-hover:text-zinc-100`}>
 							Alexandre.dev
 						</span>
 					</Link>

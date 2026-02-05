@@ -1,6 +1,6 @@
 "use client"
 
-import { fonteKalam } from "@/app/fonts"
+import { fonteKalam, fontSatoshi } from "@/app/fonts"
 import { motion } from "framer-motion"
 import { ChevronDown, Github, Linkedin, MessageCircle } from "lucide-react"
 import Image from "next/image"
@@ -82,7 +82,7 @@ export default function Principal() {
 							initial={{ opacity: 0, y: 20 }}
 							animate={{ opacity: 1, y: 0 }}
 							transition={{ delay: 1.5, duration: 0.5 }}
-							className="text-zinc-400 text-base sm:text-lg max-w-lg leading-relaxed"
+							className={`${fontSatoshi.className} text-zinc-400 text-base sm:text-lg max-w-lg leading-relaxed`}
 						>
 							Over 4 years of experience building innovative web and mobile applications using React, Next.js, and Node.js.
 						</motion.p>
