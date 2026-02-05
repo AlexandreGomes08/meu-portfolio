@@ -36,7 +36,6 @@ export default function Principal() {
 		<div className="relative min-h-screen bg-neutral-950 overflow-hidden flex flex-col">
 			{/* Background Effects */}
 			<div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none z-0">
-				<div className="absolute top-[-10%] right-[-5%] w-[500px] h-[500px] bg-blue-600/20 rounded-full blur-[100px] animate-pulse" />
 				<div className="absolute bottom-[10%] left-[-5%] w-[400px] h-[400px] bg-purple-600/10 rounded-full blur-[100px]" />
 			</div>
 
@@ -91,15 +90,17 @@ export default function Principal() {
 						initial={{ opacity: 0, scale: 0.9 }}
 						animate={{ opacity: 1, scale: 1 }}
 						transition={{ duration: 0.7 }}
-						className="relative"
+						className="relative flex items-center justify-center group"
 					>
-						<div className="relative w-64 h-64 sm:w-80 sm:h-80 lg:w-96 lg:h-96 rounded-full p-1 bg-gradient-to-tr from-blue-500 to-purple-600">
-							<div className="absolute inset-0 bg-neutral-950 rounded-full m-[2px]" />
+						{/* Spotlight Glow behind the photo (formerly top-right corner glow) */}
+						<div className="absolute inset-0 -m-12 bg-blue-600/20 rounded-full blur-[80px] animate-pulse pointer-events-none group-hover:bg-blue-500/30 transition-colors duration-700" />
+						
+						<div className="relative w-56 h-56 sm:w-72 sm:h-72 lg:w-85 lg:h-85 rounded-full overflow-hidden shadow-2xl transition-transform duration-500 ">
 							<Image
 								src="/minha-foto.jpeg"
 								alt="Alexandre Gomes"
 								fill
-								className="rounded-full object-cover p-1"
+								className="object-cover"
 								priority
 							/>
 						</div>
