@@ -1,7 +1,7 @@
 "use client"
-import { Languages, Moon, Sun } from "lucide-react"
+import { fontSatoshi } from "@/app/fonts"
+import { CodeXml, Languages, Moon, Sun } from "lucide-react"
 import { useTheme } from "next-themes"
-import Image from "next/image"
 import Link from "next/link"
 import { useEffect, useState } from "react"
 import { FiMenu, FiX } from "react-icons/fi"
@@ -14,22 +14,36 @@ export default function Cabecalho() {
 	const [mounted, setMounted] = useState(false)
 	const [lang, setLang] = useState<"pt" | "en">("en")
 
-	// Ensure theme is mounted to avoid hydration mismatch
 	useEffect(() => {
 		setMounted(true)
 	}, [])
 
 	const toggleLanguage = () => {
 		setLang(lang === "en" ? "pt" : "en")
-		// Logic to change language would go here
 	}
 
 	return (
 		<header className="fixed top-0 left-0 right-0 z-50 w-full flex items-center h-14 sm:h-16 transition-all duration-300 bg-neutral-950/75 backdrop-blur-md border-b border-white/10 shadow-lg">
 			<Container className="flex-1 flex justify-between items-center">
-				<div className="flex items-center gap-10 w-[46px] sm:w-[60px]">
-					<Link href="/" className="">
-						<Image src="/logo.png" alt="Logo" width={60} height={0} />
+				<div className="flex items-center">
+					<Link href="/" className="group flex items-center gap-2 outline-none">
+						<svg width="0" height="0" className="absolute">
+							<defs>
+								<linearGradient id="logo-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+									<stop offset="0%" stopColor="#A855F7" /> {/* Purple-500 */}
+									<stop offset="100%" stopColor="#3B82F6" /> {/* Blue-500 */}
+								</linearGradient>
+							</defs>
+						</svg>
+						
+						<CodeXml  
+							className="w-7 h-7 sm:w-8 sm:h-8 transition-transform duration-300" 
+							style={{ stroke: "url(#logo-gradient)" }} 
+						/>
+						
+						<span className={`${fontSatoshi.className} text-white/90 text-xl sm:text-2xl tracking-tighter transition-colors duration-300 group-hover:text-zinc-200`}>
+							Alexandre.dev
+						</span>
 					</Link>
 				</div>
 				<div className="sm:hidden">
@@ -45,7 +59,6 @@ export default function Cabecalho() {
 					<div className="flex items-center gap-4 text-zinc-400">
 						<div className="h-6 w-[1px] bg-white/10"></div>
 						
-						{/* Language Toggle */}
 						<button 
 							onClick={toggleLanguage}
 							className="hover:text-white transition-colors flex items-center gap-1 font-medium text-sm"
@@ -55,7 +68,6 @@ export default function Cabecalho() {
 							<span>{lang.toUpperCase()}</span>
 						</button>
 
-						{/* Theme Toggle */}
 						{mounted && (
 							<button
 								onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
