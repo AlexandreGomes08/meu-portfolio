@@ -1,4 +1,4 @@
-import { fonteKalam } from "@/app/layout"
+import { fonteKalam } from "@/app/fonts"
 import CardProjeto from "./cardProjeto"
 
 export default function Home() {

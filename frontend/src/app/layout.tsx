@@ -1,7 +1,8 @@
-import type { Metadata } from "next"
-import { Montserrat, Kalam } from "next/font/google"
-import "./globals.css"
 import AOSInit from "@/components/AOSInit"
+import type { Metadata } from "next"
+import { ThemeProvider } from "next-themes"
+import { Inter, JetBrains_Mono } from "next/font/google"
+import "./globals.css"
 
 export const metadata: Metadata = {
 	title: "Alexandre Gomes - Portfolio",
@@ -11,14 +12,17 @@ export const metadata: Metadata = {
 	},
 }
 
-const fonte = Montserrat({
+const inter = Inter({
 	subsets: ["latin"],
+	variable: "--font-inter",
 })
 
-export const fonteKalam = Kalam({
-	weight: "400",
+const jetbrainsMono = JetBrains_Mono({
 	subsets: ["latin"],
+	variable: "--font-jetbrains-mono",
 })
+
+
 
 export default function RootLayout({
 	children,
@@ -26,10 +30,17 @@ export default function RootLayout({
 	children: React.ReactNode
 }>) {
 	return (
-		<html lang="pt-BR">
-			<body className={`${fonte.className} antialiased`}>
-				<AOSInit />
-				{children}
+		<html lang="pt-BR" className={`${inter.variable} ${jetbrainsMono.variable}`}>
+			<body className="antialiased bg-neutral-950 text-gray-200">
+				<ThemeProvider
+					attribute="class"
+					defaultTheme="dark"
+					enableSystem
+					disableTransitionOnChange
+				>
+					<AOSInit />
+					{children}
+				</ThemeProvider>
 			</body>
 		</html>
 	)

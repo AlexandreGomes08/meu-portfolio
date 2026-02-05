@@ -5,7 +5,7 @@ import { usePathname } from "next/navigation"
 export default function Menu() {
 	const caminho = usePathname()
 	return (
-		<nav className="flex flex-col text-base items-end sm:items-normal sm:flex-row gap-8 sm:gap-7 pb-4 sm:pb-0">
+		<nav className="flex flex-col text-base items-end sm:items-normal sm:flex-row gap-6 sm:gap-6 pb-4 sm:pb-0">
 			<MenuItem href="/" selecionado={caminho === "/"}>
 				Home
 			</MenuItem>
