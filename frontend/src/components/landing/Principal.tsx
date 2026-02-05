@@ -2,11 +2,12 @@
 
 import { fonteKalam } from "@/app/fonts"
 import { motion } from "framer-motion"
-import { Github, Linkedin, MessageCircle } from "lucide-react"
+import { ChevronDown, Github, Linkedin, MessageCircle } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
 import { useEffect, useState } from "react"
 import Cabecalho from "../shared/Cabecalho"
+import DustParticles from "./DustParticles"
 
 const TypingEffect = ({ text, delay = 0 }: { text: string; delay?: number }) => {
 	const [displayedText, setDisplayedText] = useState("")
@@ -32,10 +33,27 @@ const TypingEffect = ({ text, delay = 0 }: { text: string; delay?: number }) => 
 }
 
 export default function Principal() {
+	const [isVisible, setIsVisible] = useState(true)
+
+	useEffect(() => {
+		const handleScroll = () => {
+			const scrollThreshold = 100
+			if (window.scrollY > scrollThreshold) {
+				setIsVisible(false)
+			} else {
+				setIsVisible(true)
+			}
+		}
+
+		window.addEventListener("scroll", handleScroll)
+		return () => window.removeEventListener("scroll", handleScroll)
+	}, [])
+
 	return (
 		<div className="relative min-h-screen bg-neutral-950 overflow-hidden flex flex-col">
 			{/* Background Effects */}
 			<div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none z-0">
+				<DustParticles />
 				<div className="absolute bottom-[10%] left-[-5%] w-[400px] h-[400px] bg-purple-600/10 rounded-full blur-[100px]" />
 			</div>
 
@@ -107,6 +125,25 @@ export default function Principal() {
 					</motion.div>
 				</div>
 			</main>
+
+			{/* Scroll Indicator */}
+			<motion.div
+				initial={{ opacity: 0 }}
+				animate={{ opacity: isVisible ? 0.4 : 0 }}
+				transition={{ duration: 0.5 }}
+				className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1 z-20 pointer-events-none"
+			>
+				<motion.div
+					animate={{ y: [0, 6, 0] }}
+					transition={{ 
+						duration: 2.5, 
+						repeat: Infinity, 
+						ease: "easeInOut" 
+					}}
+				>
+					<ChevronDown size={28} className="text-zinc-400" />
+				</motion.div>
+			</motion.div>
 		</div>
 	)
 }
