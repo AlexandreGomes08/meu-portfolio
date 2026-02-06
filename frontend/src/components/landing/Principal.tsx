@@ -109,7 +109,7 @@ export default function Principal() {
 						
 						<div className="relative w-56 h-56 sm:w-72 sm:h-72 lg:w-85 lg:h-85 rounded-full overflow-hidden shadow-2xl transition-transform duration-500 ">
 							<Image
-								src="/minha-foto.jpeg"
+								src="/minha-foto0.jpg"
 								alt="Alexandre Gomes"
 								fill
 								className="object-cover"
