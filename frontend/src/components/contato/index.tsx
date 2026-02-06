@@ -6,7 +6,10 @@ import Link from "next/link"
 
 export default function Contato() {
 	return (
-		<section id="contact" className="relative py-20 px-4 sm:px-6 overflow-hidden">
+		<section
+			id="contact"
+			className="relative py-20 px-4 sm:px-6 overflow-hidden scroll-mt-4 sm:scroll-mt-6"
+		>
 			<div className="relative z-10 max-w-[1200px] mx-auto">
 				<div
 					data-aos="fade-up"

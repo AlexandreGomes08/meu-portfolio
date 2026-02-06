@@ -60,7 +60,10 @@ const EXPERIENCES: Experience[] = [
 
 export default function Experiencia() {
 	return (
-		<section id="experience" className="py-20 relative overflow-hidden">
+		<section
+			id="experience"
+			className="py-10 relative overflow-hidden scroll-mt-10 sm:scroll-mt-12"
+		>
 			<div className="absolute top-1/2 left-0 w-[400px] h-[400px] bg-purple-600/5 rounded-full blur-[100px] -z-10 translate-y-[-50%]" />
 			<div className="absolute bottom-0 right-0 w-[400px] h-[400px] bg-blue-600/5 rounded-full blur-[100px] -z-10" />
 

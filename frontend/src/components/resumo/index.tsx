@@ -7,7 +7,10 @@ import { SiNestjs, SiPostgresql, SiSupabase } from "react-icons/si"
 
 export default async function Resumo() {
 	return (
-		<section id="about" className="relative py-10 px-4 sm:px-6 overflow-hidden">
+		<section
+			id="about"
+			className="relative py-10 px-4 sm:px-6 overflow-hidden scroll-mt-10 sm:scroll-mt-12"
+		>
 			<div className="relative z-10 max-w-[1200px] mx-auto">
 				<div className="bg-[#0f0f12]/80 backdrop-blur-md border border-white/[0.04] rounded-[32px] overflow-hidden px-8 py-16 sm:px-12 sm:py-16 shadow-2xl flex flex-col items-center text-center">
 					<div

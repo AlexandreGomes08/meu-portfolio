@@ -49,7 +49,10 @@ export default function Principal() {
 	}, [])
 
 	return (
-		<div className="relative min-h-screen flex flex-col overflow-hidden">
+		<div
+			id="home"
+			className="relative min-h-screen flex flex-col overflow-hidden scroll-mt-14 sm:scroll-mt-16"
+		>
 			<div className="absolute top-0 left-0 w-full h-full pointer-events-none z-0">
 				<div className="absolute bottom-[10%] left-[-5%] w-[400px] h-[400px] bg-purple-600/10 rounded-full blur-[100px]" />
 			</div>

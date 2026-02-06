@@ -1,5 +1,9 @@
 @import "tailwindcss";
 
+html {
+	scroll-behavior: smooth;
+}
+
 :root {
 	--background: #ffffff;
 	--foreground: #171717;
@@ -150,4 +154,3 @@ body {
 	color: transparent;
 	animation: gradient-x 10s linear infinite;
 }
-

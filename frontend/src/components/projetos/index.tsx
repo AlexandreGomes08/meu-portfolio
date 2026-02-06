@@ -71,8 +71,10 @@ const MOCK_PROJECTS: Project[] = [
 
 export default function Home() {
 	return (
-		<section id="projects" className="py-12 relative overflow-hidden">
-			{/* Subtle Background Effects */}
+		<section
+			id="projects"
+			className="py-12 relative overflow-hidden scroll-mt-8 sm:scroll-mt-10"
+		>
 			<div className="absolute top-0 right-0 w-[500px] h-[500px] bg-blue-600/5 rounded-full blur-[120px] -z-10" />
 			<div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-purple-600/5 rounded-full blur-[120px] -z-10" />
 
