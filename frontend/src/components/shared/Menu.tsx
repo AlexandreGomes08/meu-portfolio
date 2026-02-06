@@ -31,8 +31,9 @@ function MenuItem(props: {
 	return (
 		<Link href={props.href} target={props.novaAba ? "_blank" : "_self"} className="group outline-none">
 			<span
-				className={`relative flex items-center gap-2 text-base transition-colors duration-300
-                ${props.selecionado ? "font-bold text-zinc-100" : "text-zinc-300 group-hover:text-zinc-100 group-focus-visible:text-zinc-100"}
+				className={`relative flex items-center gap-2 text-base transition-all duration-300 text-zinc-300
+				group-hover:bg-clip-text group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:from-purple-500 group-hover:to-blue-500
+				group-focus-visible:bg-clip-text group-focus-visible:text-transparent group-focus-visible:bg-gradient-to-r group-focus-visible:from-purple-500 group-focus-visible:to-blue-500
 				after:content-[''] after:absolute after:-bottom-1 after:left-0 after:w-full after:h-[1.5px] 
 				after:bg-gradient-to-r after:from-purple-500 after:to-blue-500 
 				after:origin-left after:scale-x-0 after:opacity-0 
