@@ -41,10 +41,11 @@ export default function ProjectCard({ project }: ProjectCardProps) {
 							{project.title}
 						</h3>
 					</div>
-
-					<div className="flex items-center gap-2 text-zinc-500/60 font-mono text-[10px] uppercase tracking-wider">
-						<Calendar size={12} />
-						<span>{project.period}</span>
+					<div className="flex items-center gap-2">
+						<div className="flex items-center gap-2 text-zinc-500 font-mono text-[10px] uppercase tracking-wider bg-white/[0.02] px-3 py-1 rounded-full border border-white/[0.05]">
+							<Calendar size={12} />
+							<span>{project.period}</span>
+						</div>
 					</div>
 
 					<p className={`${fontSatoshi.className} text-zinc-400 text-sm sm:text-base leading-relaxed line-clamp-2`}>

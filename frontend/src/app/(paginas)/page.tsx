@@ -1,3 +1,4 @@
+import Experiencia from "@/components/experiencia"
 import DustParticles from "@/components/landing/DustParticles"
 import Principal from "@/components/landing/Principal"
 import Projetos from "@/components/projetos"
@@ -17,6 +18,7 @@ export default function Home() {
 					<Principal />
 					<Resumo />
 					<Projetos />
+					<Experiencia />
 				</div>
 			</div>			
 		</div>

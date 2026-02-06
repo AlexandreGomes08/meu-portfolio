@@ -7,7 +7,7 @@ const MOCK_PROJECTS: Project[] = [
 		id: 1,
 		title: "Nexus Dashboard",
 		category: "Web • Dashboard",
-		period: "2023 - 2024",
+		period: "Jun 2021 - Dec 2022",
 		shortDescription: "A high-performance real-time analytics platform for enterprise SaaS, focusing on visual clarity and developer experience.",
 		technicalBlock: {
 			problem: "Complex data presentation was slowing down decision-making for operations managers.",
@@ -44,7 +44,7 @@ const MOCK_PROJECTS: Project[] = [
 		id: 3,
 		title: "Core API Engine",
 		category: "API • Architecture",
-		period: "2023 - 2023",
+		period: "Jun 2021 - Dec 2022",
 		shortDescription: "A scalable microservices orchestrator designed to handle millions of requests monthly with ultra-low latency.",
 		technicalBlock: {
 			problem: "Scaling the monolithic API was becoming impossible due to bottlenecked database connections.",
