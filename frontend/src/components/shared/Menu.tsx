@@ -9,16 +9,16 @@ export default function Menu() {
 			<MenuItem href="/" selecionado={caminho === "/"}>
 				Home
 			</MenuItem>
-			<MenuItem href="/sobre" selecionado={caminho.startsWith("/sobre")}>
+			<MenuItem href="/#about" selecionado={false}>
 				About
 			</MenuItem>
-			<MenuItem href="/projeto/1" selecionado={caminho.startsWith("/projeto")}>
+			<MenuItem href="/#projects" selecionado={false}>
 				Projects
 			</MenuItem>
-			<MenuItem href="/projeto/1" selecionado={caminho.startsWith("/projeto")}>
+			<MenuItem href="/#experience" selecionado={false}>
 				Experience
 			</MenuItem>
-			<MenuItem href="/contato" selecionado={false} novaAba={true}>
+			<MenuItem href="/#contact" selecionado={false}>
 				Contact
 			</MenuItem>
 		</nav>
@@ -32,7 +32,11 @@ function MenuItem(props: {
 	novaAba?: boolean
 }) {
 	return (
-		<Link href={props.href} target={props.novaAba ? "_blank" : "_self"} className="group outline-none">
+		<Link
+			href={props.href}
+			target={props.novaAba ? "_blank" : "_self"}
+			className="group outline-none"
+		>
 			<span
 				className={`relative flex items-center gap-2 text-base transition-all duration-300 text-zinc-300
 				group-hover:bg-clip-text group-hover:text-transparent group-hover:bg-gradient-to-r group-hover:from-purple-500 group-hover:to-blue-500

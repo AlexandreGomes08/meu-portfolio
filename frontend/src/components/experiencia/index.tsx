@@ -24,9 +24,9 @@ const EXPERIENCES: Experience[] = [
 			"Led the development of a high-performance analytics dashboard using Next.js and Go.",
 			"Optimized database queries decreasing page load time by 40%.",
 			"Mentored junior developers and implemented code review standards.",
-			"Architected a scalable microservices infrastructure using Docker and Kubernetes."
+			"Architected a scalable microservices infrastructure using Docker and Kubernetes.",
 		],
-		techStack: ["Next.js", "Go", "PostgreSQL", "Docker", "Kubernetes"]
+		techStack: ["Next.js", "Go", "PostgreSQL", "Docker", "Kubernetes"],
 	},
 	{
 		id: 2,
@@ -38,9 +38,9 @@ const EXPERIENCES: Experience[] = [
 			"Developed and maintained complex web applications using React and Node.js.",
 			"Integrated third-party APIs for payment processing and data synchronization.",
 			"Improved SEO performance and accessibility across all client projects.",
-			"Collaborated with UI/UX designers to implement pixel-perfect interfaces."
+			"Collaborated with UI/UX designers to implement pixel-perfect interfaces.",
 		],
-		techStack: ["React", "Node.js", "MongoDB", "TailwindCSS", "AWS"]
+		techStack: ["React", "Node.js", "MongoDB", "TailwindCSS", "AWS"],
 	},
 	{
 		id: 3,
@@ -52,10 +52,10 @@ const EXPERIENCES: Experience[] = [
 			"Assisted in the development of responsive websites using HTML, CSS, and JavaScript.",
 			"Implemented frontend components according to design specifications.",
 			"Participated in agile ceremonies and contributed to daily standups.",
-			"Built reusable UI components that accelerated development speed by 15%."
+			"Built reusable UI components that accelerated development speed by 15%.",
 		],
-		techStack: ["JavaScript", "React", "SASS", "Firebase", "Git"]
-	}
+		techStack: ["JavaScript", "React", "SASS", "Firebase", "Git"],
+	},
 ]
 
 export default function Experiencia() {
@@ -66,11 +66,16 @@ export default function Experiencia() {
 
 			<div className="container mx-auto px-4">
 				<div className="flex flex-col items-center mb-16 space-y-4 text-center">
-					<h1 className={`${fontJetBrainsMono.className} text-sm font-medium text-zinc-500 tracking-[0.2em] uppercase`}>
+					<h1
+						className={`${fontJetBrainsMono.className} text-sm font-medium text-zinc-500 tracking-[0.2em] uppercase`}
+					>
 						Career Path
 					</h1>
-					<h2 className={`${fontSatoshi.className} text-3xl sm:text-5xl font-semibold text-white/90 tracking-tight`}>
-						Professional <span className="text-zinc-500 font-light italic">Experience</span>
+					<h2
+						className={`${fontSatoshi.className} text-2xl sm:text-4xl font-semibold text-white/90 tracking-tight`}
+					>
+						Professional{" "}
+						<span className="text-zinc-500 font-light italic">Experience</span>
 					</h2>
 				</div>
 
@@ -79,7 +84,7 @@ export default function Experiencia() {
 
 					<div className="space-y-12">
 						{EXPERIENCES.map((exp, index) => (
-							<div 
+							<div
 								key={exp.id}
 								className={`relative flex flex-col md:flex-row items-center ${
 									index % 2 === 0 ? "md:flex-row-reverse" : ""
@@ -92,7 +97,9 @@ export default function Experiencia() {
 									<div className="group bg-[#0f0f12]/80 backdrop-blur-md border border-white/[0.04] rounded-[24px] p-6 sm:p-8 hover:border-white/[0.1] transition-all duration-500 shadow-2xl">
 										<div className="flex flex-col justify-between gap-3 mb-6">
 											<div>
-												<h3 className={`${fontSatoshi.className} text-xl font-bold text-white/90 mb-1 group-hover:text-purple-400 transition-colors`}>
+												<h3
+													className={`${fontSatoshi.className} text-xl font-bold text-white/90 mb-1 group-hover:text-purple-400 transition-colors`}
+												>
 													{exp.role}
 												</h3>
 												<p className="text-zinc-400 font-medium text-sm">
@@ -114,7 +121,10 @@ export default function Experiencia() {
 
 										<ul className="space-y-3 mb-8">
 											{exp.description.map((item, i) => (
-												<li key={i} className="flex gap-3 text-zinc-400 text-sm leading-relaxed">
+												<li
+													key={i}
+													className="flex gap-3 text-zinc-400 text-sm leading-relaxed"
+												>
 													<span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-purple-500/40 shrink-0" />
 													{item}
 												</li>
@@ -123,8 +133,8 @@ export default function Experiencia() {
 
 										<div className="flex flex-wrap gap-2">
 											{exp.techStack.map((tech) => (
-												<span 
-													key={tech} 
+												<span
+													key={tech}
 													className="px-2.5 py-1 rounded-md text-[10px] font-mono border border-zinc-800 bg-neutral-900/50 text-zinc-400"
 												>
 													{tech}

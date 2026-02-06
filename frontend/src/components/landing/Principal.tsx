@@ -84,7 +84,8 @@ export default function Principal() {
 							transition={{ delay: 1.5, duration: 0.5 }}
 							className={`${fontSatoshi.className} text-zinc-400 text-base sm:text-lg max-w-lg leading-relaxed`}
 						>
-							Over 4 years of experience building innovative web and mobile applications using React, Next.js, and Node.js.
+							Over 4 years of experience building innovative web and mobile
+							applications using React, Next.js, and Node.js.
 						</motion.p>
 
 						<motion.div
@@ -93,9 +94,21 @@ export default function Principal() {
 							transition={{ delay: 2, duration: 0.5 }}
 							className="flex items-center gap-4 pt-4"
 						>
-							<SocialButton href="https://github.com/AlexandreGomes08" icon={<Github size={20} />} label="GitHub" />
-							<SocialButton href="https://www.linkedin.com/in/alexandregomesdev/" icon={<Linkedin size={20} />} label="LinkedIn" />
-							<SocialButton href="/" icon={<MessageCircle size={20} />} label="WhatsApp" />
+							<SocialButton
+								href="https://github.com/AlexandreGomes08"
+								icon={<Github size={20} />}
+								label="GitHub"
+							/>
+							<SocialButton
+								href="https://www.linkedin.com/in/alexandregomesdev/"
+								icon={<Linkedin size={20} />}
+								label="LinkedIn"
+							/>
+							<SocialButton
+								href="https://wa.me/5588999109162"
+								icon={<MessageCircle size={20} />}
+								label="WhatsApp"
+							/>
 						</motion.div>
 					</div>
 
@@ -106,7 +119,7 @@ export default function Principal() {
 						className="relative flex items-center justify-center group"
 					>
 						<div className="absolute inset-0 -m-12 bg-blue-600/20 rounded-full blur-[80px] animate-pulse pointer-events-none group-hover:bg-blue-500/30 transition-colors duration-700" />
-						
+
 						<div className="relative w-56 h-56 sm:w-72 sm:h-72 lg:w-85 lg:h-85 rounded-full overflow-hidden shadow-2xl transition-transform duration-500 ">
 							<Image
 								src="/minha-foto0.jpg"
@@ -128,21 +141,28 @@ export default function Principal() {
 			>
 				<motion.div
 					animate={{ y: [0, 6, 0] }}
-					transition={{ 
-						duration: 2.5, 
-						repeat: Infinity, 
-						ease: "easeInOut" 
+					transition={{
+						duration: 2.5,
+						repeat: Infinity,
+						ease: "easeInOut",
 					}}
 				>
 					<ChevronDown size={28} className="text-zinc-400" />
 				</motion.div>
 			</motion.div>
-			
 		</div>
 	)
 }
 
-function SocialButton({ href, icon, label }: { href: string; icon: React.ReactNode; label: string }) {
+function SocialButton({
+	href,
+	icon,
+	label,
+}: {
+	href: string
+	icon: React.ReactNode
+	label: string
+}) {
 	return (
 		<Link
 			href={href}
