@@ -3,7 +3,8 @@ import Image from "next/image"
 import { FaDocker, FaReact } from "react-icons/fa"
 import { IoLogoJavascript } from "react-icons/io5"
 import { RiNextjsFill, RiTailwindCssFill } from "react-icons/ri"
-import { SiNestjs } from "react-icons/si"
+import { SiNestjs, SiPostgresql, SiSupabase } from "react-icons/si"
+
 
 export default async function Resumo() {
 	return (
@@ -19,6 +20,8 @@ export default async function Resumo() {
 							<SkillIcon icon={<RiNextjsFill size={26} />} label="Next.js" />
 							<SkillIcon icon={<RiTailwindCssFill size={24} />} label="Tailwind CSS" />
 							<SkillIcon icon={<SiNestjs size={24} />} label="NestJS" />
+							<SkillIcon icon={<SiSupabase size={24} />} label="Supabase" />
+							<SkillIcon icon={<SiPostgresql size={24} />} label="PostgreSQL" />
 							<SkillIcon icon={<FaDocker size={24} />} label="Docker" />
 						</div>
 

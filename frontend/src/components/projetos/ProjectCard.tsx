@@ -81,7 +81,6 @@ export default function ProjectCard({ project }: ProjectCardProps) {
 					))}
 				</div>
 
-				{/* Buttons */}
 				<div className="flex flex-wrap gap-3 pt-3">
 					{project.links.live && (
 						<Link 

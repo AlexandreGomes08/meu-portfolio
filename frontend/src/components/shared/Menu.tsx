@@ -15,6 +15,9 @@ export default function Menu() {
 			<MenuItem href="/projeto/1" selecionado={caminho.startsWith("/projeto")}>
 				Projects
 			</MenuItem>
+			<MenuItem href="/projeto/1" selecionado={caminho.startsWith("/projeto")}>
+				Experience
+			</MenuItem>
 			<MenuItem href="/contato" selecionado={false} novaAba={true}>
 				Contact
 			</MenuItem>
