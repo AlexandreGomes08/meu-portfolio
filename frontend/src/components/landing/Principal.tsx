@@ -63,7 +63,7 @@ export default function Principal() {
 							initial={{ opacity: 0, y: 20 }}
 							animate={{ opacity: 1, y: 0 }}
 							transition={{ duration: 0.5 }}
-							className={`${fonteKalam.className} text-4xl sm:text-5xl lg:text-6xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-500 pb-2`}
+							className={`${fonteKalam.className} text-4xl sm:text-5xl lg:text-6xl font-bold animate-hero-gradient pb-2`}
 						>
 							Hi, I&apos;m Alexandre Gomes
 						</motion.h1>
