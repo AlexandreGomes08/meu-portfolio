@@ -1,8 +1,10 @@
+import Contato from "@/components/contato"
 import Experiencia from "@/components/experiencia"
 import DustParticles from "@/components/landing/DustParticles"
 import Principal from "@/components/landing/Principal"
 import Projetos from "@/components/projetos"
 import Resumo from "@/components/resumo"
+import Rodape from "@/components/shared/Rodape"
 
 export default function Home() {
 	return (
@@ -13,14 +15,16 @@ export default function Home() {
 					<div className="absolute top-[-5%] left-[-5%] w-[600px] h-[600px] bg-purple-600/5 rounded-full blur-[120px]" />
 					<div className="absolute bottom-[20%] right-[-10%] w-[600px] h-[600px] bg-blue-600/5 rounded-full blur-[120px]" />
 				</div>
-				
+
 				<div className="relative z-10 w-full">
 					<Principal />
 					<Resumo />
 					<Projetos />
 					<Experiencia />
+					<Contato />
+					<Rodape />
 				</div>
-			</div>			
+			</div>
 		</div>
 	)
 }
