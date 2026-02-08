@@ -20,17 +20,160 @@
 	},
 	"projects": {
 		"title": "Projetos",
-		"heading": "Construindo soluções digitais",
+		"heading": "Construindo",
 		"headingHighlight": "escaláveis",
-		"headingSuffix": ""
+		"headingSuffix": "soluções digitais",
+		"items": [
+			{
+				"id": 1,
+				"title": "APPI",
+				"category": "Mobile • Web • Dashboard",
+				"period": "Nov 2024 - Jun 2025",
+				"shortDescription": "Um app multiplataforma feito com React Native, com um painel administrativo em Next.js e uma API em Nest.js com PostgreSQL.",
+				"technicalBlock": {
+					"problem": "A apresentação complexa de dados estava atrasando a tomada de decisão para os gerentes de operações.",
+					"solution": "Implementado um dashboard intuitivo baseado em React com gerenciamento de estado otimizado e gráficos personalizados.",
+					"result": "Redução de 40% no tempo de obtenção de insights e carregamento de página 2,5 vezes mais rápido em comparação com o sistema legado."
+				},
+				"techStack": [
+					"React Native",
+					"Next.js",
+					"TypeScript",
+					"TailwindCSS",
+					"Nest.js",
+					"PostgreSQL"
+				],
+				"links": {
+					"playstore": "https://play.google.com/store/apps/details?id=com.uxsoftware.appi",
+					"appstore": "https://apps.apple.com/us/app/appi/id6636485164",
+					"dashboard": "https://appiprovedor.vercel.app/login"
+				},
+				"image": "/projetos/appi.png",
+				"visual": "linear-gradient(135deg, #6366f1 0%, #a855f7 100%)"
+			},
+			{
+				"id": 2,
+				"title": "Plataforma Solar",
+				"category": "Web • Dashboard",
+				"period": "Out 2025 - Fev 2026",
+				"shortDescription": "Um painel de energia solar multi-tenant para gerenciamento de projetos e conexão de clientes, integradores e projetistas.",
+				"technicalBlock": {
+					"problem": "Os usuários tinham dificuldade em rastrear ativos em várias cadeias com precisão e baixa latência.",
+					"solution": "Desenvolvido um aplicativo multiplataforma usando React Native com um back-end robusto em Node.js para agregação de preços.",
+					"result": "A base de usuários ativos cresceu 150% em 3 meses; 99.9% de tempo de atividade para streaming de preços."
+				},
+				"techStack": [
+					"Next.js",
+					"Ant Design",
+					"TypeScript",
+					"TailwindCSS",
+					"Nest.js",
+					"PostgreSQL"
+				],
+				"links": {
+					"dashboard": "https://portal.tellarsolucoes.com.br/cadastro",
+					"github": "#"
+				},
+				"image": "/projetos/solar2.webp",
+				"visual": "linear-gradient(135deg, #a855f7 0%, #3b82f6 100%)"
+			},
+			{
+				"id": 3,
+				"title": "Meu Site Ágil",
+				"category": "Web • Dashboard",
+				"period": "Jun 2025 - Dez 2026",
+				"shortDescription": "Landing page otimizada com painel administrativo, desenvolvido em Next.js com estilização TailwindCSS.",
+				"technicalBlock": {
+					"problem": "Escalar a API monolítica estava se tornando impossível devido a gargalos nas conexões de banco de dados.",
+					"solution": "Migrado para uma arquitetura de microsserviços baseada em NestJS com Kafka para processamento orientado a eventos.",
+					"result": "A escalabilidade aumentou em 10 vezes; os custos do servidor foram reduzidos em 35% por meio da otimização de recursos."
+				},
+				"techStack": [
+					"React",
+					"Next.js",
+					"TypeScript",
+					"Nest.js",
+					"PostgreSQL",
+					"TailwindCSS"
+				],
+				"links": {
+					"dashboard": "https://www.meusiteagil.com.br/",
+					"github": "#"
+				},
+				"image": "/projetos/msa.png",
+				"visual": "linear-gradient(135deg, #f43f5e 0%, #fb923c 100%)"
+			}
+		]
 	},
 	"experience": {
-		"title": "Experiência",
-		"heading": "Minha jornada profissional",
+		"title": "Trajetória",
+		"heading": "Experiência Profissional",
 		"remote": "Remoto",
 		"hybrid": "Híbrido",
 		"onsite": "Presencial",
-		"present": "Presente"
+		"present": "Presente",
+		"items": [
+			{
+				"id": 1,
+				"role": "Desenvolvedor Full Stack",
+				"company": "UX Software",
+				"period": "Set 2025 - Presente",
+				"type": "Sobral - CE",
+				"description": [
+					"Desenvolvimento de landing pages e interfaces responsivas usando React.js.",
+					"Desenvolvimento e manutenção de aplicativos móveis multiplataforma com React Native.",
+					"Integração com APIs REST e sistemas orientados a banco de dados.",
+					"Publicações e manutenção em lojas de aplicativos (App Store e Google Play).",
+					"Integrações de backend e correções de bugs usando NestJS.",
+					"Controle de versão e colaboração usando Git e GitHub.",
+					"Implantações de sistema via Vercel e Coolify.",
+					"Suporte ao cliente e participação em reuniões semanais de alinhamento."
+				],
+				"techStack": [
+					"React Native",
+					"TypeScript",
+					"NextJS",
+					"PostgreSQL",
+					"NestJS",
+					"REST APIs",
+					"Git",
+					"Docker",
+					"Vercel",
+					"Coolify"
+				]
+			},
+			{
+				"id": 2,
+				"role": "Estagiário de Desenvolvimento Mobile",
+				"company": "UX Software",
+				"period": "Nov 2024 - Set 2025",
+				"type": "Sobral - CE",
+				"description": [
+					"Desenvolvimento de aplicações móveis personalizadas para provedores de serviços de internet.",
+					"Manutenção de software, correção de bugs e suporte técnico.",
+					"Integração com sistemas de ISP através de APIs REST.",
+					"Controle de versão usando Git e GitHub.",
+					"Atualizações do Expo SDK e manutenção de compatibilidade de aplicativos.",
+					"Suporte na resolução de problemas de produção e assistência ao cliente."
+				],
+				"techStack": ["React Native", "Expo", "TypeScript", "REST APIs", "Git"]
+			},
+			{
+				"id": 3,
+				"role": "Bolsista de Análise de Dados",
+				"company": "FUNCAP",
+				"period": "Jun 2024 - Jan 2025",
+				"type": "Remoto",
+				"description": [
+					"Desenvolvimento de scripts Python para web scraping e análise de dados.",
+					"Automação de fluxos de trabalho de extração de dados usando Selenium.",
+					"Processamento de dados, limpeza e estruturação para consumo de backend.",
+					"Suporte para sistemas que lidam com grandes volumes de dados.",
+					"Aplicação de práticas de manuseio de dados relevantes para APIs e integrações."
+				],
+				"techStack": ["Python", "Selenium", "Pandas", "Data Processing", "Web Scraping"]
+			}
+		]
 	},
 	"contact": {
 		"title": "CONTATO",

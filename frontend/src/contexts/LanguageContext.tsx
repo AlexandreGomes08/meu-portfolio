@@ -9,7 +9,7 @@ type Language = "en" | "pt"
 interface LanguageContextType {
 	language: Language
 	setLanguage: (lang: Language) => void
-	translate: (key: string) => string
+	translate: (key: string) => any
 }
 
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined)
