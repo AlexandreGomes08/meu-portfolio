@@ -1,5 +1,6 @@
 import { fontJetBrainsMono, fontSatoshi } from "@/app/fonts"
-import Image from "next/image"
+import { Send } from "lucide-react"
+import Link from "next/link"
 import { FaDocker, FaReact } from "react-icons/fa"
 import { IoLogoJavascript } from "react-icons/io5"
 import { RiNextjsFill, RiTailwindCssFill } from "react-icons/ri"
@@ -60,16 +61,16 @@ export default async function Resumo() {
 							</p>
 						</div>
 
-						<button className="group relative flex items-center justify-center gap-3 text-zinc-200 font-medium h-[52px] rounded-full border border-white/[0.08] bg-white/[0.02] backdrop-blur-md hover:bg-white/[0.05] hover:border-white/[0.15] hover:text-white transition-all duration-300 px-8">
-							<Image
-								src="/ReadCvLogo.png"
-								alt="Resume Icon"
-								width={20}
-								height={20}
-								className="opacity-70 group-hover:opacity-100 transition-opacity"
+						<Link
+							href="/#contact"
+							className="group relative flex items-center justify-center gap-3 text-zinc-200 font-medium h-[52px] rounded-full border border-white/[0.08] bg-white/[0.02] backdrop-blur-md hover:bg-white/[0.05] hover:border-white/[0.15] hover:text-white transition-all duration-300 px-8"
+						>
+							<Send
+								size={16}
+								className="text-zinc-400 group-hover:text-white transition-colors"
 							/>
-							<span>My resume</span>
-						</button>
+							<span>Contact me</span>
+						</Link>
 					</div>
 				</div>
 			</div>
