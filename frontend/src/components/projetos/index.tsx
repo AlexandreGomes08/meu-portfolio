@@ -53,7 +53,7 @@ const MOCK_PROJECTS: Project[] = [
 			github: "#",
 		},
 		image: "/projetos/solar2.webp",
-		visual: "linear-gradient(135deg, #3b82f6 0%, #2dd4bf 100%)",
+		visual: "linear-gradient(135deg, #a855f7 0%, #3b82f6 100%)",
 	},
 	{
 		id: 3,
@@ -85,7 +85,7 @@ export default function Home() {
 			id="projects"
 			className="py-12 relative overflow-hidden scroll-mt-8 sm:scroll-mt-10"
 		>
-			<div className="absolute top-0 right-0 w-[500px] h-[500px] bg-blue-600/5 rounded-full blur-[120px] -z-10" />
+			<div className="absolute top-0 right-0 w-[500px] h-[500px] bg-purple-600/5 rounded-full blur-[120px] -z-10" />
 			<div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-purple-600/5 rounded-full blur-[120px] -z-10" />
 
 			<div className="container mx-auto px-4">

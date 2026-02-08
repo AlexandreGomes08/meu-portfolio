@@ -31,23 +31,23 @@ export default function ProjectCarousel({ projects }: ProjectCarouselProps) {
 	const variants = {
 		enter: (direction: number) => ({
 			x: direction > 0 ? 1000 : -1000,
-			opacity: 0
+			opacity: 0,
 		}),
 		center: {
 			zIndex: 1,
 			x: 0,
-			opacity: 1
+			opacity: 1,
 		},
 		exit: (direction: number) => ({
 			zIndex: 0,
 			x: direction < 0 ? 1000 : -1000,
-			opacity: 0
-		})
+			opacity: 0,
+		}),
 	}
 
 	return (
 		<div className="relative w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 group">
-			<div className="relative">
+			<div className="relative overflow-hidden">
 				<AnimatePresence initial={false} custom={direction} mode="wait">
 					<motion.div
 						key={currentIndex}
@@ -56,11 +56,22 @@ export default function ProjectCarousel({ projects }: ProjectCarouselProps) {
 						initial="enter"
 						animate="center"
 						exit="exit"
+						drag="x"
+						dragConstraints={{ left: 0, right: 0 }}
+						dragElastic={1}
+						onDragEnd={(e, { offset, velocity }) => {
+							const swipe = offset.x
+							if (swipe < -50) {
+								nextSlide()
+							} else if (swipe > 50) {
+								prevSlide()
+							}
+						}}
 						transition={{
 							x: { type: "spring", stiffness: 300, damping: 30 },
-							opacity: { duration: 0.2 }
+							opacity: { duration: 0.2 },
 						}}
-						className="w-full"
+						className="w-full cursor-grab active:cursor-grabbing"
 					>
 						<ProjectCard project={projects[currentIndex]} />
 					</motion.div>
@@ -88,8 +99,8 @@ export default function ProjectCarousel({ projects }: ProjectCarouselProps) {
 						key={index}
 						onClick={() => goToSlide(index)}
 						className={`w-2.5 h-2.5 rounded-full transition-all duration-300 ${
-							index === currentIndex 
-								? "bg-blue-500 w-8" 
+							index === currentIndex
+								? "bg-purple-500 w-8"
 								: "bg-zinc-700 hover:bg-zinc-600"
 						}`}
 						aria-label={`Go to project ${index + 1}`}

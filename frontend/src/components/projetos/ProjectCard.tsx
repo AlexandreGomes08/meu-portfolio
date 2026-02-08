@@ -67,7 +67,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
 							key={tech}
 							className="px-2 py-0.5 rounded-full text-[10px] font-medium border border-zinc-700/50 bg-zinc-800/30 text-zinc-400 flex items-center gap-1"
 						>
-							<span className="w-1 h-1 rounded-full bg-blue-500/50" />
+							<span className="w-1 h-1 rounded-full bg-purple-500/50" />
 							{tech}
 						</span>
 					))}
@@ -121,10 +121,10 @@ export default function ProjectCard({ project }: ProjectCardProps) {
 
 			<div className="flex-1 w-full max-w-[420px] lg:ml-auto">
 				<div className="relative group">
-					<div className="absolute inset-0 bg-blue-600/5 rounded-2xl blur-[40px] group-hover:bg-blue-600/10 transition-all duration-700" />
+					<div className="absolute inset-0 bg-purple-600/5 rounded-2xl blur-[40px] group-hover:bg-purple-600/10 transition-all duration-700" />
 
 					<div className="relative w-full aspect-[16/10] rounded-2xl overflow-hidden border border-zinc-800/50 bg-neutral-900/50 backdrop-blur-md p-1 shadow-xl">
-						<div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 to-blue-500/5" />
+						<div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 to-purple-600/5" />
 
 						{/* <div className="w-full h-full bg-zinc-900/80 flex flex-col items-center justify-center text-zinc-700 border border-zinc-800/50 rounded-[inherit]">
 							<Layers size={40} className="mb-2 opacity-10" />
