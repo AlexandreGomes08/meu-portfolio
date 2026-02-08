@@ -1,25 +1,28 @@
 "use client"
+import { useLanguage } from "@/contexts/LanguageContext"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
 
 export default function Menu() {
 	const caminho = usePathname()
+	const { translate } = useLanguage()
+
 	return (
 		<nav className="flex flex-col text-base items-end sm:items-normal sm:flex-row gap-6 sm:gap-6 pb-4 sm:pb-0">
 			<MenuItem href="/#home" selecionado={caminho === "/"}>
-				Home
+				{translate("menu.home")}
 			</MenuItem>
 			<MenuItem href="/#about" selecionado={false}>
-				About
+				{translate("menu.about")}
 			</MenuItem>
 			<MenuItem href="/#projects" selecionado={false}>
-				Projects
+				{translate("menu.projects")}
 			</MenuItem>
 			<MenuItem href="/#experience" selecionado={false}>
-				Experience
+				{translate("menu.experience")}
 			</MenuItem>
 			<MenuItem href="/#contact" selecionado={false}>
-				Contact
+				{translate("menu.contact")}
 			</MenuItem>
 		</nav>
 	)

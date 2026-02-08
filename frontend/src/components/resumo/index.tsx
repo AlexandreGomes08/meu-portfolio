@@ -1,4 +1,7 @@
+"use client"
+
 import { fontJetBrainsMono, fontSatoshi } from "@/app/fonts"
+import { useLanguage } from "@/contexts/LanguageContext"
 import { Send } from "lucide-react"
 import Link from "next/link"
 import { FaDocker, FaReact } from "react-icons/fa"
@@ -6,7 +9,9 @@ import { IoLogoJavascript } from "react-icons/io5"
 import { RiNextjsFill, RiTailwindCssFill } from "react-icons/ri"
 import { SiNestjs, SiPostgresql, SiSupabase } from "react-icons/si"
 
-export default async function Resumo() {
+export default function Resumo() {
+	const { translate } = useLanguage()
+
 	return (
 		<section
 			id="about"
@@ -36,29 +41,21 @@ export default async function Resumo() {
 							<h1
 								className={`${fontJetBrainsMono.className} text-sm font-medium text-zinc-500 tracking-[0.2em] uppercase`}
 							>
-								About me
+								{translate("about.title")}
 							</h1>
 
 							<h2
 								className={`${fontSatoshi.className} text-zinc-100 text-2xl sm:text-4xl font-semibold leading-tight tracking-tight`}
 							>
-								I am a passionate software developer looking for opportunity.
+								{translate("about.heading")}
 							</h2>
 						</div>
 
 						<div
 							className={`${fontSatoshi.className} space-y-5 text-zinc-400 text-base sm:text-lg leading-[1.55] max-w-2xl font-light`}
 						>
-							<p>
-								I am a full stack developer with professional experience since 2024,
-								currently pursuing a degree in Computer Engineering at the Federal
-								University of Ceará.
-							</p>
-							<p>
-								Based in Hidrolândia, Ceará, Brazil, I have hands-on experience
-								building mobile applications and RESTful APIs, always focusing on
-								clean, well-structured, and maintainable code.
-							</p>
+							<p>{translate("about.paragraph1")}</p>
+							<p>{translate("about.paragraph2")}</p>
 						</div>
 
 						<Link
@@ -69,7 +66,7 @@ export default async function Resumo() {
 								size={16}
 								className="text-zinc-400 group-hover:text-white transition-colors"
 							/>
-							<span>Contact me</span>
+							<span>{translate("about.contactButton")}</span>
 						</Link>
 					</div>
 				</div>

@@ -1,0 +1,47 @@
+{
+	"menu": {
+		"home": "Início",
+		"about": "Sobre",
+		"projects": "Projetos",
+		"experience": "Experiência",
+		"contact": "Contato"
+	},
+	"hero": {
+		"greeting": "Olá, sou Alexandre Gomes",
+		"role": "Desenvolvedor Full Stack",
+		"description": "Mais de 2 anos de experiência construindo aplicações web e mobile inovadoras usando React, Next.js e Nest.js."
+	},
+	"about": {
+		"title": "Sobre mim",
+		"heading": "Sou um desenvolvedor de software apaixonado em busca de oportunidades.",
+		"paragraph1": "Sou um desenvolvedor full stack com experiência profissional desde 2024, atualmente cursando Engenharia da Computação na Universidade Federal do Ceará.",
+		"paragraph2": "Natural de Hidrolândia, Ceará, Brasil, tenho experiência prática na construção de aplicações mobile e APIs RESTful, sempre focando em código limpo, bem estruturado e de fácil manutenção.",
+		"contactButton": "Entre em contato"
+	},
+	"projects": {
+		"title": "Projetos",
+		"heading": "Construindo soluções digitais",
+		"headingHighlight": "escaláveis",
+		"headingSuffix": ""
+	},
+	"experience": {
+		"title": "Experiência",
+		"heading": "Minha jornada profissional",
+		"remote": "Remoto",
+		"hybrid": "Híbrido",
+		"onsite": "Presencial",
+		"present": "Presente"
+	},
+	"contact": {
+		"title": "CONTATO",
+		"heading": "Vamos construir algo juntos.",
+		"description": "Estou aberto a oportunidades full-time, projetos freelance e colaborações.",
+		"descriptionSuffix": "Sinta-se à vontade para entrar em contato — geralmente respondo em até 24 horas.",
+		"availability": "Disponível para novas oportunidades"
+	},
+	"footer": {
+		"rights": "Todos os direitos reservados.",
+		"madeWith": "Feito com",
+		"by": "por"
+	}
+}

@@ -1,0 +1,47 @@
+{
+	"menu": {
+		"home": "Home",
+		"about": "About",
+		"projects": "Projects",
+		"experience": "Experience",
+		"contact": "Contact"
+	},
+	"hero": {
+		"greeting": "Hi, I'm Alexandre Gomes",
+		"role": "Full Stack Developer",
+		"description": "Over 2 years of experience building innovative web and mobile applications using React, Next.js, and Nest.js."
+	},
+	"about": {
+		"title": "About me",
+		"heading": "I am a passionate software developer looking for opportunity.",
+		"paragraph1": "I am a full stack developer with professional experience since 2024, currently pursuing a degree in Computer Engineering at the Federal University of Ceará.",
+		"paragraph2": "Based in Hidrolândia, Ceará, Brazil, I have hands-on experience building mobile applications and RESTful APIs, always focusing on clean, well-structured, and maintainable code.",
+		"contactButton": "Contact me"
+	},
+	"projects": {
+		"title": "Projects",
+		"heading": "Building",
+		"headingHighlight": "scalable",
+		"headingSuffix": "digital solutions"
+	},
+	"experience": {
+		"title": "Experience",
+		"heading": "My professional journey",
+		"remote": "Remote",
+		"hybrid": "Hybrid",
+		"onsite": "On-site",
+		"present": "Present"
+	},
+	"contact": {
+		"title": "CONTACT",
+		"heading": "Let's build something together.",
+		"description": "I'm currently open to full-time roles, freelance projects, and collaborations.",
+		"descriptionSuffix": "Feel free to reach out — I usually reply within 24 hours.",
+		"availability": "Available for new opportunities"
+	},
+	"footer": {
+		"rights": "All rights reserved.",
+		"madeWith": "Made with",
+		"by": "by"
+	}
+}

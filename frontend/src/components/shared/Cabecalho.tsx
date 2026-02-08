@@ -1,5 +1,6 @@
 "use client"
 import { fontSatoshi } from "@/app/fonts"
+import { useLanguage } from "@/contexts/LanguageContext"
 import { CodeXml, Languages, Moon, Sun } from "lucide-react"
 import { useTheme } from "next-themes"
 import Link from "next/link"
@@ -12,14 +13,14 @@ export default function Cabecalho() {
 	const [menuAberto, setMenuAberto] = useState(false)
 	const { theme, setTheme } = useTheme()
 	const [mounted, setMounted] = useState(false)
-	const [lang, setLang] = useState<"pt" | "en">("en")
+	const { language, setLanguage } = useLanguage()
 
 	useEffect(() => {
 		setMounted(true)
 	}, [])
 
 	const toggleLanguage = () => {
-		setLang(lang === "en" ? "pt" : "en")
+		setLanguage(language === "en" ? "pt" : "en")
 	}
 
 	return (
@@ -29,19 +30,27 @@ export default function Cabecalho() {
 					<Link href="/" className="group flex items-center gap-2 outline-none">
 						<svg width="0" height="0" className="absolute">
 							<defs>
-								<linearGradient id="logo-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+								<linearGradient
+									id="logo-gradient"
+									x1="0%"
+									y1="0%"
+									x2="100%"
+									y2="100%"
+								>
 									<stop offset="0%" stopColor="#A855F7" /> {/* Purple-500 */}
 									<stop offset="100%" stopColor="#3B82F6" /> {/* Blue-500 */}
 								</linearGradient>
 							</defs>
 						</svg>
-						
-						<CodeXml  
-							className="w-7 h-7 sm:w-8 sm:h-8 transition-transform duration-300" 
-							style={{ stroke: "url(#logo-gradient)" }} 
+
+						<CodeXml
+							className="w-7 h-7 sm:w-8 sm:h-8 transition-transform duration-300"
+							style={{ stroke: "url(#logo-gradient)" }}
 						/>
-						
-						<span className={`${fontSatoshi.className} text-white/90 text-xl sm:text-2xl tracking-tighter transition-colors duration-300 group-hover:text-zinc-100`}>
+
+						<span
+							className={`${fontSatoshi.className} text-white/90 text-xl sm:text-2xl tracking-tighter transition-colors duration-300 group-hover:text-zinc-100`}
+						>
 							Alexandre.dev
 						</span>
 					</Link>
@@ -58,25 +67,32 @@ export default function Cabecalho() {
 					<Menu />
 					<div className="flex items-center gap-4 text-zinc-400">
 						<div className="h-6 w-[1px] bg-white/10"></div>
-						
-						<button 
+
+						<button
 							onClick={toggleLanguage}
 							className="hover:text-white transition-colors flex items-center gap-1 font-medium text-sm"
 							aria-label="Toggle Language"
 						>
 							<Languages size={18} />
-							<span>{lang.toUpperCase()}</span>
+							<span>{language.toUpperCase()}</span>
 						</button>
 
-						{mounted && (
-							<button
-								onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-								className="hover:text-white transition-colors"
-								aria-label="Toggle Theme"
-							>
-								{theme === "dark" ? <Sun size={20} /> : <Moon size={20} />}
-							</button>
-						)}
+						<button
+							onClick={() => mounted && setTheme(theme === "dark" ? "light" : "dark")}
+							className="hover:text-white transition-colors"
+							aria-label="Toggle Theme"
+							disabled={!mounted}
+						>
+							{mounted ? (
+								theme === "dark" ? (
+									<Sun size={20} />
+								) : (
+									<Moon size={20} />
+								)
+							) : (
+								<Sun size={20} />
+							)}
+						</button>
 					</div>
 				</div>
 				{menuAberto && (
@@ -85,12 +101,12 @@ export default function Cabecalho() {
 						<div className="w-full h-[1px] bg-white/10"></div>
 
 						<div className="flex items-center gap-6 pt-4">
-							<button 
+							<button
 								onClick={toggleLanguage}
 								className="flex items-center gap-2 text-zinc-300 hover:text-white"
 							>
 								<Languages size={20} />
-								<span>{lang === "en" ? "English" : "Português"}</span>
+								<span>{language === "en" ? "English" : "Português"}</span>
 							</button>
 
 							{mounted && (
@@ -98,7 +114,7 @@ export default function Cabecalho() {
 									onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
 									className="flex items-center gap-2 text-zinc-300 hover:text-white"
 								>
-									{theme === "dark" ? <Sun size={20} /> : <Moon size={20} />}
+									{null /* Placeholder for theme icon */}
 									<span>{theme === "dark" ? "Light Mode" : "Dark Mode"}</span>
 								</button>
 							)}

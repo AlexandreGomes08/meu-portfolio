@@ -1,18 +1,21 @@
 "use client"
 
 import { fontJetBrainsMono, fontSatoshi } from "@/app/fonts"
+import { useLanguage } from "@/contexts/LanguageContext"
 import { Github, Linkedin, MessageCircle } from "lucide-react"
 import Link from "next/link"
 import Container from "./Container"
 
 export default function Rodape() {
+	const { translate } = useLanguage()
+
 	return (
 		<footer className="relative py-12 border-t border-white/5 bg-[#0a0a0a]">
 			<Container className="flex flex-col md:flex-row items-center justify-between gap-6">
 				<div className="flex flex-col items-center md:items-start gap-2">
 					<p className={`${fontSatoshi.className} text-zinc-500 text-sm font-light`}>
 						© 2026 <span className="text-zinc-400 font-medium">Alexandre Gomes</span>.
-						All rights reserved.
+						{translate("footer.rights")}
 					</p>
 					<div className="flex items-center gap-2 opacity-30">
 						<span className="w-1.5 h-1.5 rounded-full bg-purple-500"></span>

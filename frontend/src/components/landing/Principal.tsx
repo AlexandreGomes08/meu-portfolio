@@ -1,6 +1,7 @@
 "use client"
 
 import { fonteKalam, fontSatoshi } from "@/app/fonts"
+import { useLanguage } from "@/contexts/LanguageContext"
 import { motion } from "framer-motion"
 import { ChevronDown, Github, Linkedin, MessageCircle } from "lucide-react"
 import Image from "next/image"
@@ -33,6 +34,7 @@ const TypingEffect = ({ text, delay = 0 }: { text: string; delay?: number }) => 
 
 export default function Principal() {
 	const [isVisible, setIsVisible] = useState(true)
+	const { translate } = useLanguage()
 
 	useEffect(() => {
 		const handleScroll = () => {
@@ -68,7 +70,7 @@ export default function Principal() {
 							transition={{ duration: 0.5 }}
 							className={`${fonteKalam.className} text-4xl sm:text-5xl lg:text-6xl font-bold animate-hero-gradient pb-2`}
 						>
-							Hi, I&apos;m Alexandre Gomes
+							{translate("hero.greeting")}
 						</motion.h1>
 
 						<motion.div
@@ -77,7 +79,7 @@ export default function Principal() {
 							transition={{ delay: 0.5, duration: 0.5 }}
 							className="text-xl sm:text-2xl text-zinc-300 font-mono h-8 sm:h-auto"
 						>
-							&gt; <TypingEffect text="Full Stack Developer" delay={0.5} />
+							&gt; <TypingEffect text={translate("hero.role")} delay={0.5} />
 							<span className="animate-pulse">_</span>
 						</motion.div>
 
@@ -87,8 +89,7 @@ export default function Principal() {
 							transition={{ delay: 1.5, duration: 0.5 }}
 							className={`${fontSatoshi.className} text-zinc-400 text-base sm:text-lg max-w-lg leading-relaxed`}
 						>
-							Over 2 years of experience building innovative web and mobile
-							applications using React, Next.js, and Nest.js.
+							{translate("hero.description")}
 						</motion.p>
 
 						<motion.div

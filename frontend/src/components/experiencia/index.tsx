@@ -1,6 +1,7 @@
 "use client"
 
 import { fontJetBrainsMono, fontSatoshi } from "@/app/fonts"
+import { useLanguage } from "@/contexts/LanguageContext"
 import { Calendar, MapPin } from "lucide-react"
 
 interface Experience {
@@ -63,7 +64,7 @@ const EXPERIENCES: Experience[] = [
 
 	{
 		id: 3,
-		role: "Data Analysis Scholar (Python)",
+		role: "Data Analysis Scholar",
 		company: "FUNCAP",
 		period: "Jun 2024 - Jan 2025",
 		type: "Remote",
@@ -79,6 +80,8 @@ const EXPERIENCES: Experience[] = [
 ]
 
 export default function Experiencia() {
+	const { translate } = useLanguage()
+
 	return (
 		<section
 			id="experience"
@@ -92,13 +95,12 @@ export default function Experiencia() {
 					<h1
 						className={`${fontJetBrainsMono.className} text-sm font-medium text-zinc-500 tracking-[0.2em] uppercase`}
 					>
-						Career Path
+						{translate("experience.title")}
 					</h1>
 					<h2
 						className={`${fontSatoshi.className} text-2xl sm:text-4xl font-semibold text-white/90 tracking-tight`}
 					>
-						Professional{" "}
-						<span className="text-zinc-500 font-light italic">Experience</span>
+						{translate("experience.heading")}
 					</h2>
 				</div>
 

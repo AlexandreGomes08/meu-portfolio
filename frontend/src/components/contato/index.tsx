@@ -1,10 +1,13 @@
 "use client"
 
 import { fontJetBrainsMono, fontSatoshi } from "@/app/fonts"
+import { useLanguage } from "@/contexts/LanguageContext"
 import { Github, Linkedin, MessageCircle } from "lucide-react"
 import Link from "next/link"
 
 export default function Contato() {
+	const { translate } = useLanguage()
+
 	return (
 		<section
 			id="contact"
@@ -20,13 +23,13 @@ export default function Contato() {
 							<h1
 								className={`${fontJetBrainsMono.className} text-sm font-medium text-zinc-500 tracking-[0.2em] uppercase`}
 							>
-								CONTACT
+								{translate("contact.title")}
 							</h1>
 
 							<h2
 								className={`${fontSatoshi.className} text-zinc-100 text-2xl sm:text-4xl font-semibold leading-tight tracking-tight`}
 							>
-								Let’s build something together.
+								{translate("contact.heading")}
 							</h2>
 						</div>
 
@@ -34,10 +37,9 @@ export default function Contato() {
 							className={`${fontSatoshi.className} space-y-5 text-zinc-400 text-base sm:text-lg leading-[1.55] max-w-2xl font-light`}
 						>
 							<p>
-								I’m currently open to full-time roles, freelance projects, and
-								collaborations.
+								{translate("contact.description")}
 								<br />
-								Feel free to reach out — I usually reply within 24 hours.
+								{translate("contact.descriptionSuffix")}
 							</p>
 						</div>
 
@@ -64,7 +66,7 @@ export default function Contato() {
 							<p
 								className={`${fontSatoshi.className} text-xs text-zinc-500 uppercase tracking-widest`}
 							>
-								Available for new opportunities
+								{translate("contact.availability")}
 							</p>
 						</div>
 					</div>

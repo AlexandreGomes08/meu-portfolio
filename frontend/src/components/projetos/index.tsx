@@ -1,4 +1,7 @@
+"use client"
+
 import { fontJetBrainsMono, fontSatoshi } from "@/app/fonts"
+import { useLanguage } from "@/contexts/LanguageContext"
 import { Project } from "./ProjectCard"
 import ProjectCarousel from "./ProjectCarousel"
 
@@ -80,6 +83,8 @@ const MOCK_PROJECTS: Project[] = [
 ]
 
 export default function Home() {
+	const { translate } = useLanguage()
+
 	return (
 		<section
 			id="projects"
@@ -94,13 +99,15 @@ export default function Home() {
 						<h1
 							className={`${fontJetBrainsMono.className} text-sm font-medium text-zinc-500 tracking-[0.2em] uppercase`}
 						>
-							Projects
+							{translate("projects.title")}
 						</h1>
 					</div>
 					<h2
 						className={`${fontSatoshi.className} text-2xl sm:text-4xl font-semibold text-white/90 tracking-tight`}
 					>
-						Building <span className="text-zinc-500">scalable</span> digital solutions
+						{translate("projects.heading")}{" "}
+						<span className="text-zinc-500">{translate("projects.headingHighlight")}</span>{" "}
+						{translate("projects.headingSuffix")}
 					</h2>
 				</div>
 

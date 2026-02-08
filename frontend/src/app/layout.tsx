@@ -1,4 +1,5 @@
 import AOSInit from "@/components/AOSInit"
+import { LanguageProvider } from "@/contexts/LanguageContext"
 import type { Metadata } from "next"
 import { ThemeProvider } from "next-themes"
 import { Inter, JetBrains_Mono } from "next/font/google"
@@ -22,8 +23,6 @@ const jetbrainsMono = JetBrains_Mono({
 	variable: "--font-jetbrains-mono",
 })
 
-
-
 export default function RootLayout({
 	children,
 }: Readonly<{
@@ -38,8 +37,10 @@ export default function RootLayout({
 					enableSystem
 					disableTransitionOnChange
 				>
-					<AOSInit />
-					{children}
+					<LanguageProvider>
+						<AOSInit />
+						{children}
+					</LanguageProvider>
 				</ThemeProvider>
 			</body>
 		</html>
