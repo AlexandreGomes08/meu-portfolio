@@ -36,7 +36,7 @@ export default function Rodape() {
 						label="LinkedIn"
 					/>
 					<SocialLink
-						href="https://wa.me/5511999999999"
+						href="https://wa.me/5588999109162"
 						icon={<MessageCircle size={18} />}
 						label="WhatsApp"
 					/>

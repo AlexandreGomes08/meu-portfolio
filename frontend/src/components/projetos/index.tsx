@@ -5,11 +5,11 @@ import ProjectCarousel from "./ProjectCarousel"
 const MOCK_PROJECTS: Project[] = [
 	{
 		id: 1,
-		title: "Nexus Dashboard",
-		category: "Web • Dashboard",
-		period: "Jun 2021 - Dec 2022",
+		title: "APPI",
+		category: "Mobile • Web • Dashboard",
+		period: "Nov 2024 - Jun 2025",
 		shortDescription:
-			"A high-performance real-time analytics platform for enterprise SaaS, focusing on visual clarity and developer experience.",
+			"A cross-platform app built with React Native, featuring a Next.js admin dashboard and a Nest.js API with PostgreSQL.",
 		technicalBlock: {
 			problem:
 				"Complex data presentation was slowing down decision-making for operations managers.",
@@ -17,21 +17,29 @@ const MOCK_PROJECTS: Project[] = [
 				"Implemented an intuitive React-based dashboard with optimized state management and custom charting.",
 			result: "40% reduction in time-to-insight and 2.5x faster page loads compared to legacy system.",
 		},
-		techStack: ["React", "Next.js", "TypeScript", "TailwindCSS", "Recharts"],
+		techStack: [
+			"React Native",
+			"Next.js",
+			"TypeScript",
+			"TailwindCSS",
+			"Nest.js",
+			"PostgreSQL",
+		],
 		links: {
-			live: "#",
-			github: "#",
-			details: "#",
+			playstore: "https://play.google.com/store/apps/details?id=com.uxsoftware.appi",
+			appstore: "https://apps.apple.com/us/app/appi/id6636485164",
+			dashboard: "https://appiprovedor.vercel.app/login",
 		},
+		image: "/projetos/appi.png",
 		visual: "linear-gradient(135deg, #6366f1 0%, #a855f7 100%)",
 	},
 	{
 		id: 2,
-		title: "Pulse Crypto Hub",
-		category: "Mobile • Web3",
-		period: "Mar 2024 - Atual",
+		title: "Plataforma Solar",
+		category: "Web • Dashboard",
+		period: "Oct 2025 - Feb 2026",
 		shortDescription:
-			"A secure and lightning-fast cryptocurrency portfolio tracker with real-time price alerts and cross-platform synchronization.",
+			"A multi-tenant solar energy dashboard for creating quotes, managing projects, and connecting clients, integrators, and designers.",
 		technicalBlock: {
 			problem:
 				"Users struggled to track assets across multiple chains with accuracy and low latency.",
@@ -39,20 +47,21 @@ const MOCK_PROJECTS: Project[] = [
 				"Developed a cross-platform app using React Native with a robust Node.js backend for price aggregation.",
 			result: "Active user base grew by 150% in 3 months; 99.9% uptime for price streaming.",
 		},
-		techStack: ["React Native", "Node.js", "Redis", "Postgres", "WebSockets"],
+		techStack: ["Next.js", "Ant Design", "TypeScript", "TailwindCSS", "Nest.js", "PostgreSQL"],
 		links: {
-			live: "#",
+			dashboard: "https://portal.tellarsolucoes.com.br/cadastro",
 			github: "#",
 		},
+		image: "/projetos/solar2.webp",
 		visual: "linear-gradient(135deg, #3b82f6 0%, #2dd4bf 100%)",
 	},
 	{
 		id: 3,
-		title: "Core API Engine",
-		category: "API • Architecture",
-		period: "Jun 2021 - Dec 2022",
+		title: "Meu Site Ágil",
+		category: "Web • Dashboard",
+		period: "Jun 2025 - Dec 2026",
 		shortDescription:
-			"A scalable microservices orchestrator designed to handle millions of requests monthly with ultra-low latency.",
+			"Landing page for internet service providers with a panel for editing information, developed in Reactjs with tailwindcss styling.",
 		technicalBlock: {
 			problem:
 				"Scaling the monolithic API was becoming impossible due to bottlenecked database connections.",
@@ -60,11 +69,12 @@ const MOCK_PROJECTS: Project[] = [
 				"Migrated to a NestJS-based microservices architecture with Kafka for event-driven processing.",
 			result: "Scalability increased by 10x; server costs reduced by 35% through resource optimization.",
 		},
-		techStack: ["NestJS", "Kafka", "Docker", "Kubernetes", "MongoDB"],
+		techStack: ["React", "Next.js", "TypeScript", "Nest.js", "PostgreSQL"],
 		links: {
+			dashboard: "https://www.meusiteagil.com.br/",
 			github: "#",
-			details: "#",
 		},
+		image: "/projetos/msa.png",
 		visual: "linear-gradient(135deg, #f43f5e 0%, #fb923c 100%)",
 	},
 ]

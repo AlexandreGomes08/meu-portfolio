@@ -49,13 +49,14 @@ export default async function Resumo() {
 							className={`${fontSatoshi.className} space-y-5 text-zinc-400 text-base sm:text-lg leading-[1.55] max-w-2xl font-light`}
 						>
 							<p>
-								Beyond coding, I&apos;m a coffee enthusiast, a cat lover, and a
-								self-taught artist who enjoys spending my free time doodling.
+								I am a full stack developer with professional experience since 2024,
+								currently pursuing a degree in Computer Engineering at the Federal
+								University of Ceará.
 							</p>
 							<p>
-								I am currently seeking opportunities to bring my skills and
-								enthusiasm to a tech company in the United States or Europe and am
-								excited about the prospect of relocating to pursue new challenges.
+								Based in Hidrolândia, Ceará, Brazil, I have hands-on experience
+								building mobile applications and RESTful APIs, always focusing on
+								clean, well-structured, and maintainable code.
 							</p>
 						</div>
 

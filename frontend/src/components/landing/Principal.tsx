@@ -87,8 +87,8 @@ export default function Principal() {
 							transition={{ delay: 1.5, duration: 0.5 }}
 							className={`${fontSatoshi.className} text-zinc-400 text-base sm:text-lg max-w-lg leading-relaxed`}
 						>
-							Over 4 years of experience building innovative web and mobile
-							applications using React, Next.js, and Node.js.
+							Over 2 years of experience building innovative web and mobile
+							applications using React, Next.js, and Nest.js.
 						</motion.p>
 
 						<motion.div

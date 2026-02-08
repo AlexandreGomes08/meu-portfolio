@@ -1,7 +1,7 @@
 "use client"
 
 import { fontSatoshi } from "@/app/fonts"
-import { Calendar, ExternalLink, Github, Layers } from "lucide-react"
+import { Apple, Calendar, ExternalLink, Github, Layers, Play } from "lucide-react"
 import Link from "next/link"
 
 export interface Project {
@@ -20,8 +20,12 @@ export interface Project {
 		live?: string
 		github?: string
 		details?: string
+		playstore?: string
+		appstore?: string
+		dashboard?: string
 	}
-	visual: string // Placeholder URL or color gradient
+	visual: string
+	image?: string
 }
 
 interface ProjectCardProps {
@@ -37,7 +41,9 @@ export default function ProjectCard({ project }: ProjectCardProps) {
 						<span className="text-[10px] font-mono text-purple-400 uppercase tracking-[0.2em] px-2 py-0.5 rounded bg-purple-500/10 mb-3 inline-block">
 							{project.category}
 						</span>
-						<h3 className={`${fontSatoshi.className} text-xl sm:text-3xl font-semibold text-white/90 leading-tight`}>
+						<h3
+							className={`${fontSatoshi.className} text-xl sm:text-3xl font-semibold text-white/90 leading-tight`}
+						>
 							{project.title}
 						</h3>
 					</div>
@@ -48,32 +54,17 @@ export default function ProjectCard({ project }: ProjectCardProps) {
 						</div>
 					</div>
 
-					<p className={`${fontSatoshi.className} text-zinc-400 text-sm sm:text-base leading-relaxed line-clamp-2`}>
+					<p
+						className={`${fontSatoshi.className} text-zinc-400 text-sm sm:text-base leading-relaxed line-clamp-2`}
+					>
 						{project.shortDescription}
 					</p>
 				</div>
 
-
-				{/* Technical Block */}
-				{/* <div className="grid grid-cols-1 md:grid-cols-3 gap-3 p-4 rounded-2xl border border-zinc-800/50 bg-zinc-900/30 backdrop-blur-sm">
-					<div>
-						<h4 className={`${fontSatoshi.className} text-[10px] font-bold text-zinc-500 uppercase tracking-tighter mb-0.5`}>Problem</h4>
-						<p className={`${fontSatoshi.className} text-xs text-zinc-400 line-clamp-2 leading-snug`}>{project.technicalBlock.problem}</p>
-					</div>
-					<div>
-						<h4 className={`${fontSatoshi.className} text-[10px] font-bold text-zinc-500 uppercase tracking-tighter mb-0.5`}>Solution</h4>
-						<p className={`${fontSatoshi.className} text-xs text-zinc-400 line-clamp-2 leading-snug`}>{project.technicalBlock.solution}</p>
-					</div>
-					<div>
-						<h4 className="text-[10px] font-bold text-zinc-500 uppercase tracking-tighter mb-0.5 text-zinc-500">Result</h4>
-						<p className="text-xs text-zinc-300 line-clamp-2 leading-snug">{project.technicalBlock.result}</p>
-					</div>
-				</div> */}
-
 				<div className="flex flex-wrap gap-1.5 pt-3">
 					{project.techStack.map((tech) => (
-						<span 
-							key={tech} 
+						<span
+							key={tech}
 							className="px-2 py-0.5 rounded-full text-[10px] font-medium border border-zinc-700/50 bg-zinc-800/30 text-zinc-400 flex items-center gap-1"
 						>
 							<span className="w-1 h-1 rounded-full bg-blue-500/50" />
@@ -83,19 +74,41 @@ export default function ProjectCard({ project }: ProjectCardProps) {
 				</div>
 
 				<div className="flex flex-wrap gap-3 pt-3">
-					{project.links.live && (
-						<Link 
-							href={project.links.live} 
+					{project.links.playstore && (
+						<Link
+							href={project.links.playstore}
+							className="flex items-center gap-2 px-5 py-2 rounded-full border border-zinc-800 bg-zinc-900/50 text-zinc-400 font-semibold text-xs hover:text-white transition-all"
 							target="_blank"
-							className="flex items-center gap-2 px-5 py-2 rounded-full bg-gradient-to-r from-blue-600/80 to-purple-600/80 text-white font-semibold text-xs hover:scale-105 transition-transform shadow-lg shadow-blue-500/10"
+						>
+							<Play size={14} />
+							Play Store
+						</Link>
+					)}
+
+					{project.links.appstore && (
+						<Link
+							href={project.links.appstore}
+							className="flex items-center gap-2 px-5 py-2 rounded-full border border-zinc-800 bg-zinc-900/50 text-zinc-400 font-semibold text-xs hover:text-white transition-all"
+							target="_blank"
+						>
+							<Apple size={14} />
+							App Store
+						</Link>
+					)}
+
+					{project.links.dashboard && (
+						<Link
+							href={project.links.dashboard}
+							className="flex items-center gap-2 px-5 py-2 rounded-full border border-zinc-800 bg-zinc-900/50 text-zinc-400 font-semibold text-xs hover:text-white transition-all"
+							target="_blank"
 						>
 							<ExternalLink size={14} />
-							Demo
+							Dashboard
 						</Link>
 					)}
 					{project.links.github && (
-						<Link 
-							href={project.links.github} 
+						<Link
+							href={project.links.github}
 							target="_blank"
 							className="flex items-center gap-2 px-5 py-2 rounded-full border border-zinc-800 bg-zinc-900/50 text-zinc-400 font-semibold text-xs hover:text-white transition-all"
 						>
@@ -109,14 +122,27 @@ export default function ProjectCard({ project }: ProjectCardProps) {
 			<div className="flex-1 w-full max-w-[420px] lg:ml-auto">
 				<div className="relative group">
 					<div className="absolute inset-0 bg-blue-600/5 rounded-2xl blur-[40px] group-hover:bg-blue-600/10 transition-all duration-700" />
-					
+
 					<div className="relative w-full aspect-[16/10] rounded-2xl overflow-hidden border border-zinc-800/50 bg-neutral-900/50 backdrop-blur-md p-1 shadow-xl">
 						<div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 to-blue-500/5" />
-						
-						<div className="w-full h-full bg-zinc-900/80 flex flex-col items-center justify-center text-zinc-700 border border-zinc-800/50 rounded-[inherit]">
+
+						{/* <div className="w-full h-full bg-zinc-900/80 flex flex-col items-center justify-center text-zinc-700 border border-zinc-800/50 rounded-[inherit]">
 							<Layers size={40} className="mb-2 opacity-10" />
-							<p className="text-[9px] font-mono uppercase tracking-[0.2em] opacity-20">Preview</p>
-						</div>
+							<p className="text-[9px] font-mono uppercase tracking-[0.2em] opacity-20">
+								Preview
+							</p>
+						</div> */}
+						{project.image ? (
+							<img
+								src={project.image}
+								alt={`${project.title} preview`}
+								className="w-full h-full object-cover rounded-[inherit] transition-transform duration-700 group-hover:scale-[1.03]"
+							/>
+						) : (
+							<div className="w-full h-full bg-zinc-900/80 flex items-center justify-center">
+								<Layers size={40} className="opacity-10" />
+							</div>
+						)}
 
 						<div className="absolute inset-0 pointer-events-none rounded-2xl border border-white/5" />
 					</div>
