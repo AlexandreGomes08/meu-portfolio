@@ -25,7 +25,7 @@ export default function Home() {
 						</h1>
 					</div>
 					<h2
-						className={`${fontSatoshi.className} text-2xl sm:text-4xl font-semibold text-white/90 tracking-tight`}
+						className={`${fontSatoshi.className} text-2xl sm:text-4xl font-semibold text-foreground tracking-tight`}
 					>
 						{translate("projects.heading")}{" "}
 						<span className="text-zinc-500">

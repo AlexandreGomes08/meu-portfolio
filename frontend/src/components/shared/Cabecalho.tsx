@@ -24,7 +24,7 @@ export default function Cabecalho() {
 	}
 
 	return (
-		<header className="fixed top-0 left-0 right-0 z-50 w-full flex items-center h-14 sm:h-16 transition-all duration-300 bg-neutral-950/75 backdrop-blur-md border-b border-white/10 shadow-lg">
+		<header className="fixed top-0 left-0 right-0 z-50 w-full flex items-center h-14 sm:h-16 transition-all duration-300 bg-background/75 backdrop-blur-md border-b border-border-theme shadow-lg">
 			<Container className="flex-1 flex justify-between items-center">
 				<div className="flex items-center">
 					<Link href="/" className="group flex items-center gap-2 outline-none">
@@ -49,7 +49,7 @@ export default function Cabecalho() {
 						/>
 
 						<span
-							className={`${fontSatoshi.className} text-white/90 text-xl sm:text-2xl tracking-tighter transition-colors duration-300 group-hover:text-zinc-100`}
+							className={`${fontSatoshi.className} text-foreground/90 text-xl sm:text-2xl tracking-tighter transition-colors duration-300 group-hover:text-foreground`}
 						>
 							Alexandre.dev
 						</span>
@@ -58,19 +58,19 @@ export default function Cabecalho() {
 				<div className="sm:hidden">
 					<button
 						onClick={() => setMenuAberto(!menuAberto)}
-						className="flex items-center text-zinc-100"
+						className="flex items-center text-foreground"
 					>
 						{menuAberto ? <FiX size={28} /> : <FiMenu size={28} />}
 					</button>
 				</div>
 				<div className="hidden sm:flex items-center gap-10">
 					<Menu />
-					<div className="flex items-center gap-4 text-zinc-400">
-						<div className="h-6 w-[1px] bg-white/10"></div>
+					<div className="flex items-center gap-4 text-muted">
+						<div className="h-6 w-[1px] bg-border-theme"></div>
 
 						<button
 							onClick={toggleLanguage}
-							className="hover:text-white transition-colors flex items-center gap-1 font-medium text-sm"
+							className="hover:text-foreground transition-colors flex items-center gap-1 font-medium text-sm"
 							aria-label="Toggle Language"
 						>
 							<Languages size={18} />
@@ -79,7 +79,7 @@ export default function Cabecalho() {
 
 						<button
 							onClick={() => mounted && setTheme(theme === "dark" ? "light" : "dark")}
-							className="hover:text-white transition-colors"
+							className="hover:text-foreground transition-colors"
 							aria-label="Toggle Theme"
 							disabled={!mounted}
 						>
@@ -96,14 +96,14 @@ export default function Cabecalho() {
 					</div>
 				</div>
 				{menuAberto && (
-					<div className="absolute top-14 sm:top-16 right-0 left-auto w-[82%] h-[calc(100vh-3.5rem)] bg-neutral-950/95 backdrop-blur-xl border-l border-white/10 shadow-2xl text-zinc-100 flex flex-col items-end text-base gap-5 p-5 sm:hidden z-50 transition-all">
+					<div className="absolute top-14 sm:top-16 right-0 left-auto w-[82%] h-[calc(100vh-3.5rem)] bg-background/95 backdrop-blur-xl border-l border-border-theme shadow-2xl text-foreground flex flex-col items-end text-base gap-5 p-5 sm:hidden z-50 transition-all">
 						<Menu />
-						<div className="w-full h-[1px] bg-white/10"></div>
+						<div className="w-full h-[1px] bg-border-theme"></div>
 
 						<div className="flex items-center gap-6 pt-4">
 							<button
 								onClick={toggleLanguage}
-								className="flex items-center gap-2 text-zinc-300 hover:text-white"
+								className="flex items-center gap-2 text-muted hover:text-foreground"
 							>
 								<Languages size={20} />
 								<span>{language === "en" ? "English" : "Português"}</span>
@@ -112,9 +112,9 @@ export default function Cabecalho() {
 							{mounted && (
 								<button
 									onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-									className="flex items-center gap-2 text-zinc-300 hover:text-white"
+									className="flex items-center gap-2 text-muted hover:text-foreground"
 								>
-									{null /* Placeholder for theme icon */}
+									{theme === "dark" ? <Sun size={20} /> : <Moon size={20} />}
 									<span>{theme === "dark" ? "Light Mode" : "Dark Mode"}</span>
 								</button>
 							)}

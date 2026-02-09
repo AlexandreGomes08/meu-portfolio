@@ -80,14 +80,14 @@ export default function ProjectCarousel({ projects }: ProjectCarouselProps) {
 
 			<button
 				onClick={prevSlide}
-				className="absolute left-0 lg:-left-6 top-1/2 -translate-y-1/2 z-10 p-3 rounded-full border border-zinc-800 bg-neutral-900/50 backdrop-blur-md text-zinc-400 hover:text-white hover:border-zinc-600 transition-all opacity-0 group-hover:opacity-100 hidden md:flex"
+				className="absolute left-0 lg:-left-6 top-1/2 -translate-y-1/2 z-10 p-3 rounded-full border border-border-theme bg-card/50 backdrop-blur-md text-muted hover:text-foreground hover:border-muted transition-all opacity-0 group-hover:opacity-100 hidden md:flex"
 				aria-label="Previous project"
 			>
 				<ChevronLeft size={24} />
 			</button>
 			<button
 				onClick={nextSlide}
-				className="absolute right-0 lg:-right-6 top-1/2 -translate-y-1/2 z-10 p-3 rounded-full border border-zinc-800 bg-neutral-900/50 backdrop-blur-md text-zinc-400 hover:text-white hover:border-zinc-600 transition-all opacity-0 group-hover:opacity-100 hidden md:flex"
+				className="absolute right-0 lg:-right-6 top-1/2 -translate-y-1/2 z-10 p-3 rounded-full border border-border-theme bg-card/50 backdrop-blur-md text-muted hover:text-foreground hover:border-muted transition-all opacity-0 group-hover:opacity-100 hidden md:flex"
 				aria-label="Next project"
 			>
 				<ChevronRight size={24} />
@@ -101,7 +101,7 @@ export default function ProjectCarousel({ projects }: ProjectCarouselProps) {
 						className={`w-2.5 h-2.5 rounded-full transition-all duration-300 ${
 							index === currentIndex
 								? "bg-purple-500 w-8"
-								: "bg-zinc-700 hover:bg-zinc-600"
+								: "bg-muted/30 hover:bg-muted/50"
 						}`}
 						aria-label={`Go to project ${index + 1}`}
 					/>

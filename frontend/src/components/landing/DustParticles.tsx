@@ -1,6 +1,7 @@
 "use client"
 
 import { useReducedMotion } from "framer-motion"
+import { useTheme } from "next-themes"
 import { useEffect, useRef } from "react"
 
 interface Particle {
@@ -25,6 +26,8 @@ export default function DustParticles() {
 	const particles = useRef<Particle[]>([])
 	const mousePosition = useRef({ x: 0, y: 0 })
 	const shouldReduceMotion = useReducedMotion()
+	const { theme, resolvedTheme } = useTheme()
+	const currentTheme = resolvedTheme || theme
 
 	useEffect(() => {
 		const canvas = canvasRef.current
@@ -58,21 +61,29 @@ export default function DustParticles() {
 
 			ctx.clearRect(0, 0, canvas.width, canvas.height)
 
+			const particleColor = currentTheme === "light" ? "0, 0, 0" : "255, 255, 255"
+
 			particles.current.forEach((p) => {
 				if (!shouldReduceMotion) {
 					p.x += p.speedX
 					p.y += p.speedY
 				}
 
-				const parallaxX = (mousePosition.current.x - canvas.width / 2) * PARALLAX_STRENGTH * (p.size / MAX_SIZE)
-				const parallaxY = (mousePosition.current.y - canvas.height / 2) * PARALLAX_STRENGTH * (p.size / MAX_SIZE)
+				const parallaxX =
+					(mousePosition.current.x - canvas.width / 2) *
+					PARALLAX_STRENGTH *
+					(p.size / MAX_SIZE)
+				const parallaxY =
+					(mousePosition.current.y - canvas.height / 2) *
+					PARALLAX_STRENGTH *
+					(p.size / MAX_SIZE)
 
 				const drawX = p.x + parallaxX
 				const drawY = p.y + parallaxY
 
 				ctx.beginPath()
 				ctx.arc(drawX, drawY, p.size, 0, Math.PI * 2)
-				ctx.fillStyle = `rgba(255, 255, 255, ${p.opacity})`
+				ctx.fillStyle = `rgba(${particleColor}, ${p.opacity})`
 				ctx.fill()
 
 				if (p.x > canvas.width) p.x = 0
@@ -103,7 +114,7 @@ export default function DustParticles() {
 			window.removeEventListener("mousemove", handleMouseMove)
 			cancelAnimationFrame(animationFrameId)
 		}
-	}, [shouldReduceMotion])
+	}, [shouldReduceMotion, currentTheme])
 
 	return (
 		<canvas

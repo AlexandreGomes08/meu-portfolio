@@ -28,19 +28,19 @@ export default function Experiencia() {
 			<div className="container mx-auto px-4">
 				<div className="flex flex-col items-center mb-16 space-y-4 text-center">
 					<h1
-						className={`${fontJetBrainsMono.className} text-sm font-medium text-zinc-500 tracking-[0.2em] uppercase`}
+						className={`${fontJetBrainsMono.className} text-sm font-medium text-muted-foreground tracking-[0.2em] uppercase`}
 					>
 						{translate("experience.title")}
 					</h1>
 					<h2
-						className={`${fontSatoshi.className} text-2xl sm:text-4xl font-semibold text-white/90 tracking-tight`}
+						className={`${fontSatoshi.className} text-2xl sm:text-4xl font-semibold text-foreground/90 tracking-tight`}
 					>
 						{translate("experience.heading")}
 					</h2>
 				</div>
 
 				<div className="relative max-w-5xl mx-auto">
-					<div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-[1px] bg-white/10 -translate-x-1/2" />
+					<div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-[1px] bg-border-theme -translate-x-1/2" />
 
 					<div className="space-y-12">
 						{(translate("experience.items") || []).map(
@@ -52,28 +52,28 @@ export default function Experiencia() {
 									}`}
 									data-aos={index % 2 === 0 ? "fade-left" : "fade-right"}
 								>
-									<div className="absolute left-4 md:left-1/2 w-3 h-3 bg-purple-500 rounded-full border-4 border-neutral-900 -translate-x-1/2 z-10" />
+									<div className="absolute left-4 md:left-1/2 w-3 h-3 bg-purple-500 rounded-full border-4 border-background -translate-x-1/2 z-10" />
 
 									<div className="w-full md:w-[45%] ml-10 md:ml-0">
-										<div className="group bg-[#0f0f12]/80 backdrop-blur-md border border-white/[0.04] rounded-[24px] p-6 sm:p-8 hover:border-white/[0.1] transition-all duration-500 shadow-2xl">
+										<div className="group bg-card/80 backdrop-blur-md border border-border-theme rounded-[24px] p-6 sm:p-8 hover:border-muted transition-all duration-500 shadow-2xl">
 											<div className="flex flex-col justify-between gap-3 mb-6">
 												<div>
 													<h3
-														className={`${fontSatoshi.className} text-xl font-bold text-white/90 mb-1 group-hover:text-purple-400 transition-colors`}
+														className={`${fontSatoshi.className} text-xl font-bold text-foreground/90 mb-1 group-hover:text-purple-400 transition-colors`}
 													>
 														{exp.role}
 													</h3>
-													<p className="text-zinc-400 font-medium text-sm">
+													<p className="text-muted font-medium text-sm">
 														{exp.company}
 													</p>
 												</div>
 
 												<div className="flex flex-col items-start gap-2">
-													<div className="flex items-center gap-2 text-zinc-500 font-mono text-[10px] uppercase tracking-wider bg-white/[0.02] px-3 py-1 rounded-full border border-white/[0.05]">
+													<div className="flex items-center gap-2 text-muted-foreground font-mono text-[10px] uppercase tracking-wider bg-foreground/[0.02] px-3 py-1 rounded-full border border-border-theme">
 														<Calendar size={12} />
 														<span>{exp.period}</span>
 													</div>
-													<div className="flex items-center gap-2 text-zinc-500 font-mono text-[10px] uppercase tracking-wider bg-white/[0.02] px-3 py-1 rounded-full border border-white/[0.05]">
+													<div className="flex items-center gap-2 text-muted-foreground font-mono text-[10px] uppercase tracking-wider bg-foreground/[0.02] px-3 py-1 rounded-full border border-border-theme">
 														<MapPin size={12} />
 														<span>{exp.type}</span>
 													</div>
@@ -84,7 +84,7 @@ export default function Experiencia() {
 												{exp.description.map((item, i) => (
 													<li
 														key={i}
-														className="flex gap-3 text-zinc-400 text-sm leading-relaxed"
+														className="flex gap-3 text-muted text-sm leading-relaxed"
 													>
 														<span className="mt-1.5 w-1.5 h-1.5 rounded-full bg-purple-500/40 shrink-0" />
 														{item}
@@ -96,7 +96,7 @@ export default function Experiencia() {
 												{exp.techStack.map((tech) => (
 													<span
 														key={tech}
-														className="px-2.5 py-1 rounded-md text-[10px] font-mono border border-zinc-800 bg-neutral-900/50 text-zinc-400"
+														className="px-2.5 py-1 rounded-md text-[10px] font-mono border border-border-theme bg-card text-muted"
 													>
 														{tech}
 													</span>

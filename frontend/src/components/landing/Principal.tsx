@@ -77,7 +77,7 @@ export default function Principal() {
 							initial={{ opacity: 0 }}
 							animate={{ opacity: 1 }}
 							transition={{ delay: 0.5, duration: 0.5 }}
-							className="text-xl sm:text-2xl text-zinc-300 font-mono h-8 sm:h-auto"
+							className="text-xl sm:text-2xl text-muted-subtitle font-mono h-8 sm:h-auto"
 						>
 							&gt; <TypingEffect text={translate("hero.role")} delay={0.5} />
 							<span className="animate-pulse">_</span>
@@ -87,7 +87,7 @@ export default function Principal() {
 							initial={{ opacity: 0, y: 20 }}
 							animate={{ opacity: 1, y: 0 }}
 							transition={{ delay: 1.5, duration: 0.5 }}
-							className={`${fontSatoshi.className} text-zinc-400 text-base sm:text-lg max-w-lg leading-relaxed`}
+							className={`${fontSatoshi.className} text-muted text-base sm:text-lg max-w-lg leading-relaxed`}
 						>
 							{translate("hero.description")}
 						</motion.p>
@@ -151,7 +151,7 @@ export default function Principal() {
 						ease: "easeInOut",
 					}}
 				>
-					<ChevronDown size={28} className="text-zinc-400" />
+					<ChevronDown size={28} className="text-muted" />
 				</motion.div>
 			</motion.div>
 		</div>
@@ -171,7 +171,7 @@ function SocialButton({
 		<Link
 			href={href}
 			target="_blank"
-			className="group flex items-center justify-center p-3 sm:px-5 sm:py-3 gap-2 rounded-full border border-zinc-800 bg-neutral-900/50 backdrop-blur-sm text-zinc-400 hover:text-white hover:border-zinc-600 hover:bg-neutral-800 transition-all duration-300"
+			className="group flex items-center justify-center p-3 sm:px-5 sm:py-3 gap-2 rounded-full border border-border-theme bg-card/50 backdrop-blur-sm text-muted hover:text-foreground hover:border-muted/50 hover:bg-card transition-all duration-300"
 			aria-label={label}
 		>
 			{icon}

@@ -34,7 +34,7 @@ interface ProjectCardProps {
 
 export default function ProjectCard({ project }: ProjectCardProps) {
 	return (
-		<div className="flex flex-col lg:flex-row w-full gap-6 lg:gap-10 items-center bg-[#0f0f12]/80 backdrop-blur-md border border-white/[0.04] rounded-[32px] p-6 sm:py-12 sm:px-10">
+		<div className="flex flex-col lg:flex-row w-full gap-6 lg:gap-10 items-center bg-card/80 backdrop-blur-md border border-border-theme rounded-[32px] p-6 sm:py-12 sm:px-10">
 			<div className="flex-1 w-full max-w-[520px] space-y-6 text-left">
 				<div className="space-y-4 mb-12">
 					<div>
@@ -42,20 +42,20 @@ export default function ProjectCard({ project }: ProjectCardProps) {
 							{project.category}
 						</span>
 						<h3
-							className={`${fontSatoshi.className} text-xl sm:text-3xl font-semibold text-white/90 leading-tight`}
+							className={`${fontSatoshi.className} text-xl sm:text-3xl font-semibold text-foreground/90 leading-tight`}
 						>
 							{project.title}
 						</h3>
 					</div>
 					<div className="flex items-center gap-2">
-						<div className="flex items-center gap-2 text-zinc-500 font-mono text-[10px] uppercase tracking-wider bg-white/[0.02] px-3 py-1 rounded-full border border-white/[0.05]">
+						<div className="flex items-center gap-2 text-muted font-mono text-[10px] uppercase tracking-wider bg-foreground/[0.02] px-3 py-1 rounded-full border border-border-theme">
 							<Calendar size={12} />
 							<span>{project.period}</span>
 						</div>
 					</div>
 
 					<p
-						className={`${fontSatoshi.className} text-zinc-400 text-sm sm:text-base leading-relaxed line-clamp-2`}
+						className={`${fontSatoshi.className} text-muted text-sm sm:text-base leading-relaxed line-clamp-2`}
 					>
 						{project.shortDescription}
 					</p>
@@ -65,7 +65,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
 					{project.techStack.map((tech) => (
 						<span
 							key={tech}
-							className="px-2 py-0.5 rounded-full text-[10px] font-medium border border-zinc-700/50 bg-zinc-800/30 text-zinc-400 flex items-center gap-1"
+							className="px-2 py-0.5 rounded-full text-[10px] font-medium border border-border-theme bg-card text-muted flex items-center gap-1"
 						>
 							<span className="w-1 h-1 rounded-full bg-purple-500/50" />
 							{tech}
@@ -77,7 +77,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
 					{project.links.playstore && (
 						<Link
 							href={project.links.playstore}
-							className="flex items-center gap-2 px-5 py-2 rounded-full border border-zinc-800 bg-zinc-900/50 text-zinc-400 font-semibold text-xs hover:text-white transition-all"
+							className="flex items-center gap-2 px-5 py-2 rounded-full border border-border-theme bg-card text-muted font-semibold text-xs hover:text-foreground transition-all"
 							target="_blank"
 						>
 							<Play size={14} />
@@ -88,7 +88,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
 					{project.links.appstore && (
 						<Link
 							href={project.links.appstore}
-							className="flex items-center gap-2 px-5 py-2 rounded-full border border-zinc-800 bg-zinc-900/50 text-zinc-400 font-semibold text-xs hover:text-white transition-all"
+							className="flex items-center gap-2 px-5 py-2 rounded-full border border-border-theme bg-card text-muted font-semibold text-xs hover:text-foreground transition-all"
 							target="_blank"
 						>
 							<Apple size={14} />
@@ -99,7 +99,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
 					{project.links.dashboard && (
 						<Link
 							href={project.links.dashboard}
-							className="flex items-center gap-2 px-5 py-2 rounded-full border border-zinc-800 bg-zinc-900/50 text-zinc-400 font-semibold text-xs hover:text-white transition-all"
+							className="flex items-center gap-2 px-5 py-2 rounded-full border border-border-theme bg-card text-muted font-semibold text-xs hover:text-foreground transition-all"
 							target="_blank"
 						>
 							<ExternalLink size={14} />
@@ -110,7 +110,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
 						<Link
 							href={project.links.github}
 							target="_blank"
-							className="flex items-center gap-2 px-5 py-2 rounded-full border border-zinc-800 bg-zinc-900/50 text-zinc-400 font-semibold text-xs hover:text-white transition-all"
+							className="flex items-center gap-2 px-5 py-2 rounded-full border border-border-theme bg-card text-muted font-semibold text-xs hover:text-foreground transition-all"
 						>
 							<Github size={14} />
 							GitHub
@@ -123,7 +123,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
 				<div className="relative group">
 					<div className="absolute inset-0 bg-purple-600/5 rounded-2xl blur-[40px] group-hover:bg-purple-600/10 transition-all duration-700" />
 
-					<div className="relative w-full aspect-[16/10] rounded-2xl overflow-hidden border border-zinc-800/50 bg-neutral-900/50 backdrop-blur-md p-1 shadow-xl">
+					<div className="relative w-full aspect-[16/10] rounded-2xl overflow-hidden border border-border-theme bg-card backdrop-blur-md p-1 shadow-xl">
 						<div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 to-purple-600/5" />
 
 						{/* <div className="w-full h-full bg-zinc-900/80 flex flex-col items-center justify-center text-zinc-700 border border-zinc-800/50 rounded-[inherit]">
@@ -139,12 +139,12 @@ export default function ProjectCard({ project }: ProjectCardProps) {
 								className="w-full h-full object-cover rounded-[inherit] transition-transform duration-700 group-hover:scale-[1.03]"
 							/>
 						) : (
-							<div className="w-full h-full bg-zinc-900/80 flex items-center justify-center">
+							<div className="w-full h-full bg-card flex items-center justify-center">
 								<Layers size={40} className="opacity-10" />
 							</div>
 						)}
 
-						<div className="absolute inset-0 pointer-events-none rounded-2xl border border-white/5" />
+						<div className="absolute inset-0 pointer-events-none rounded-2xl border border-foreground/5" />
 					</div>
 				</div>
 			</div>

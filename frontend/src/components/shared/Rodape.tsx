@@ -10,17 +10,17 @@ export default function Rodape() {
 	const { translate } = useLanguage()
 
 	return (
-		<footer className="relative py-12 border-t border-white/5 bg-[#0a0a0a]">
+		<footer className="relative py-12 border-t border-border-theme bg-background">
 			<Container className="flex flex-col md:flex-row items-center justify-between gap-6">
 				<div className="flex flex-col items-center md:items-start gap-2">
-					<p className={`${fontSatoshi.className} text-zinc-500 text-sm font-light`}>
-						© 2026 <span className="text-zinc-400 font-medium">Alexandre Gomes</span>.
+					<p className={`${fontSatoshi.className} text-muted text-sm font-light`}>
+						© 2026 <span className="text-foreground font-medium">Alexandre Gomes</span>.
 						{translate("footer.rights")}
 					</p>
 					<div className="flex items-center gap-2 opacity-30">
 						<span className="w-1.5 h-1.5 rounded-full bg-purple-500"></span>
 						<p
-							className={`${fontJetBrainsMono.className} text-[10px] text-zinc-500 uppercase tracking-widest`}
+							className={`${fontJetBrainsMono.className} text-[10px] text-muted uppercase tracking-widest`}
 						>
 							Built with React, Next.js & Tailwind CSS
 						</p>
@@ -54,7 +54,7 @@ function SocialLink({ href, icon, label }: { href: string; icon: React.ReactNode
 		<Link
 			href={href}
 			target="_blank"
-			className="text-zinc-500 hover:text-white transition-all duration-300 transform hover:-translate-y-0.5"
+			className="text-muted hover:text-foreground transition-all duration-300 transform hover:-translate-y-0.5"
 			aria-label={label}
 		>
 			{icon}
