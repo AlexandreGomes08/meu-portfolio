@@ -53,7 +53,7 @@
 			},
 			{
 				"id": 2,
-				"title": "Plataforma Solar",
+				"title": "Plataforma VoltekSys",
 				"category": "Web • Dashboard",
 				"period": "Out 2025 - Fev 2026",
 				"shortDescription": "Um painel de energia solar multi-tenant para gerenciamento de projetos e conexão de clientes, integradores e projetistas.",
@@ -71,7 +71,7 @@
 					"PostgreSQL"
 				],
 				"links": {
-					"dashboard": "https://portal.tellarsolucoes.com.br/cadastro",
+					"dashboard": "https://ivsolucoes.volteksys.com.br/admin/login",
 					"github": "#"
 				},
 				"image": "/projetos/solar2.webp",
