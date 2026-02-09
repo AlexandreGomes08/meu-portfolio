@@ -76,7 +76,7 @@ export default function ChatBot({ isOpen, onClose }: ChatBotProps) {
 			}
 
 			setMessages((prev) => [...prev, assistantMessage])
-		} catch (error) {
+		} catch {
 			const errorMessage: ChatMessage = {
 				role: "assistant",
 				content:

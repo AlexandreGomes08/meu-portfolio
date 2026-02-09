@@ -59,7 +59,7 @@ export default function ProjectCarousel({ projects }: ProjectCarouselProps) {
 						drag="x"
 						dragConstraints={{ left: 0, right: 0 }}
 						dragElastic={1}
-						onDragEnd={(e, { offset, velocity }) => {
+						onDragEnd={(e, { offset }) => {
 							const swipe = offset.x
 							if (swipe < -50) {
 								nextSlide()

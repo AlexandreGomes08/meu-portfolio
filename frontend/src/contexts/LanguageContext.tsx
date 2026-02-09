@@ -9,14 +9,21 @@ type Language = "en" | "pt"
 interface LanguageContextType {
 	language: Language
 	setLanguage: (lang: Language) => void
+	// eslint-disable-next-line @typescript-eslint/no-explicit-any
 	translate: (key: string) => any
 }
 
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined)
 
-const translationsMap = {
-	en: enTranslations,
-	pt: ptTranslations,
+type TranslationValue = string | TranslationData | TranslationValue[]
+
+type TranslationData = {
+	[key: string]: TranslationValue
+}
+
+const translationsMap: Record<Language, TranslationData> = {
+	en: enTranslations as unknown as TranslationData,
+	pt: ptTranslations as unknown as TranslationData,
 }
 
 const getInitialLanguage = (): Language => {
@@ -34,16 +41,20 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
 	}
 
 	const translate = useCallback(
-		(key: string): string => {
+		// eslint-disable-next-line @typescript-eslint/no-explicit-any
+		(key: string): any => {
 			const keys = key.split(".")
-			let value: any = translationsMap[language]
+			let value: TranslationValue | undefined = translationsMap[language]
 
 			for (const k of keys) {
-				value = value?.[k]
-				if (!value) return key
+				if (typeof value === "object" && value !== null && !Array.isArray(value)) {
+					value = (value as TranslationData)[k]
+				} else {
+					return key
+				}
 			}
 
-			return value
+			return value !== undefined ? value : key
 		},
 		[language],
 	)

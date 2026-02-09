@@ -2,6 +2,7 @@
 
 import { fontSatoshi } from "@/app/fonts"
 import { Apple, Calendar, ExternalLink, Github, Layers, Play } from "lucide-react"
+import Image from "next/image"
 import Link from "next/link"
 
 export interface Project {
@@ -133,10 +134,11 @@ export default function ProjectCard({ project }: ProjectCardProps) {
 							</p>
 						</div> */}
 						{project.image ? (
-							<img
+							<Image
 								src={project.image}
 								alt={`${project.title} preview`}
-								className="w-full h-full object-cover rounded-[inherit] transition-transform duration-700 group-hover:scale-[1.03]"
+								fill
+								className="object-cover rounded-[inherit] transition-transform duration-700 group-hover:scale-[1.03]"
 							/>
 						) : (
 							<div className="w-full h-full bg-card flex items-center justify-center">
