@@ -3,7 +3,7 @@
 import { fonteKalam, fontSatoshi } from "@/app/fonts"
 import { useLanguage } from "@/contexts/LanguageContext"
 import { motion } from "framer-motion"
-import { ChevronDown, Github, Linkedin, MessageCircle } from "lucide-react"
+import { ChevronDown, Github, Linkedin, Mail } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
 import { useEffect, useState } from "react"
@@ -109,9 +109,9 @@ export default function Principal() {
 								label="LinkedIn"
 							/>
 							<SocialButton
-								href="https://wa.me/5588999109162"
-								icon={<MessageCircle size={20} />}
-								label="WhatsApp"
+								href="mailto:gomesalexandre227@gmail.com"
+								icon={<Mail size={20} />}
+								label="Email"
 							/>
 						</motion.div>
 					</div>

@@ -2,7 +2,7 @@
 
 import { fontJetBrainsMono, fontSatoshi } from "@/app/fonts"
 import { useLanguage } from "@/contexts/LanguageContext"
-import { Github, Linkedin, MessageCircle } from "lucide-react"
+import { Github, Linkedin, Mail } from "lucide-react"
 import Link from "next/link"
 
 export default function Contato() {
@@ -55,9 +55,9 @@ export default function Contato() {
 								label="LinkedIn"
 							/>
 							<SocialButton
-								href="https://wa.me/5588999109162"
-								icon={<MessageCircle size={20} />}
-								label="WhatsApp"
+								href="mailto:gomesalexandre227@gmail.com"
+								icon={<Mail size={20} />}
+								label="Email"
 							/>
 						</div>
 

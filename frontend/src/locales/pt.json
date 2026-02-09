@@ -21,8 +21,8 @@
 	"projects": {
 		"title": "Projetos",
 		"heading": "Construindo",
-		"headingHighlight": "escaláveis",
-		"headingSuffix": "soluções digitais",
+		"headingHighlight": "soluções",
+		"headingSuffix": "digitais escaláveis",
 		"items": [
 			{
 				"id": 1,
@@ -71,8 +71,7 @@
 					"PostgreSQL"
 				],
 				"links": {
-					"dashboard": "https://ivsolucoes.volteksys.com.br/admin/login",
-					"github": "#"
+					"dashboard": "https://ivsolucoes.volteksys.com.br/admin/login"
 				},
 				"image": "/projetos/solar2.webp",
 				"visual": "linear-gradient(135deg, #a855f7 0%, #3b82f6 100%)"
@@ -97,8 +96,7 @@
 					"TailwindCSS"
 				],
 				"links": {
-					"dashboard": "https://www.meusiteagil.com.br/",
-					"github": "#"
+					"dashboard": "https://www.meusiteagil.com.br/"
 				},
 				"image": "/projetos/msa.png",
 				"visual": "linear-gradient(135deg, #f43f5e 0%, #fb923c 100%)"

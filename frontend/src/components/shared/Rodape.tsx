@@ -2,7 +2,7 @@
 
 import { fontJetBrainsMono, fontSatoshi } from "@/app/fonts"
 import { useLanguage } from "@/contexts/LanguageContext"
-import { Github, Linkedin, MessageCircle } from "lucide-react"
+import { Github, Linkedin, Mail } from "lucide-react"
 import Link from "next/link"
 import Container from "./Container"
 
@@ -39,9 +39,9 @@ export default function Rodape() {
 						label="LinkedIn"
 					/>
 					<SocialLink
-						href="https://wa.me/5588999109162"
-						icon={<MessageCircle size={18} />}
-						label="WhatsApp"
+						href="mailto:gomesalexandre227@gmail.com"
+						icon={<Mail size={18} />}
+						label="Email"
 					/>
 				</div>
 			</Container>
