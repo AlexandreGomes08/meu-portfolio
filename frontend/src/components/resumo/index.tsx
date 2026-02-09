@@ -1,60 +1,87 @@
-import Image from "next/image"
-import Curriculo from "../curriculo"
-import { obterTecnologias } from "@/functions/tecnologias"
-import { fonteKalam } from "@/app/layout"
-import { IoLogoJavascript } from "react-icons/io5"
-import { FaReact, FaDocker } from "react-icons/fa"
-import { RiNextjsFill, RiTailwindCssFill } from "react-icons/ri"
-import { SiNestjs } from "react-icons/si"
+"use client"
 
-export default async function BotaoChat() {
-	const tecnologias = await obterTecnologias()
+import { fontJetBrainsMono, fontSatoshi } from "@/app/fonts"
+import { useLanguage } from "@/contexts/LanguageContext"
+import { Send } from "lucide-react"
+import Link from "next/link"
+import { FaDocker, FaReact } from "react-icons/fa"
+import { IoLogoJavascript } from "react-icons/io5"
+import { RiNextjsFill, RiTailwindCssFill } from "react-icons/ri"
+import { SiNestjs, SiPostgresql, SiSupabase } from "react-icons/si"
+
+export default function Resumo() {
+	const { translate } = useLanguage()
+
 	return (
-		<div className="py-10 px-6 ">
-			<div className="flex sm:flex-row flex-col sm:justify-between items-center px-0 sm:px-26 w-full h-200 sm:h-[500px] bg-gradient-to-r from-neutral-800 to-neutral-900 rounded-2xl shadow-2xl">
-				<div data-aos="fade-up">
-					<Image
-						src="/Programming-pana.png"
-						alt="Logo"
-						width={420}
-						height={0}
-						className="p-2 sm:p-1.5 py-8 sm:py-0 w-[300px] sm:w-[420px]"
-					/>
-				</div>
-				<div data-aos="fade-up">
-					<div className="px-6 h-[360px] max-w-xl flex flex-col">
-						<div className="flex gap-x-3 flex-wrap pb-6">
-							<IoLogoJavascript size={30} color="#e4e4e7" />
-							<FaReact size={30} color="#e4e4e7" />
-							<RiNextjsFill size={30} color="#e4e4e7" />
-							<RiTailwindCssFill size={30} color="#e4e4e7" />
-							<SiNestjs size={30} color="#e4e4e7" />
-							<FaDocker size={30} color="#e4e4e7" />
+		<section
+			id="about"
+			className="relative py-10 px-4 sm:px-6 overflow-hidden scroll-mt-10 sm:scroll-mt-12"
+		>
+			<div className="relative z-10 max-w-[1200px] mx-auto">
+				<div className="bg-card/80 backdrop-blur-md border border-border-theme rounded-[32px] overflow-hidden px-8 py-16 sm:px-12 sm:py-16 shadow-2xl flex flex-col items-center text-center">
+					<div
+						data-aos="fade-up"
+						className="max-w-[760px] flex flex-col items-center space-y-10"
+					>
+						<div className="flex gap-6 sm:gap-8 flex-wrap justify-center opacity-40 hover:opacity-100 transition-opacity duration-500">
+							<SkillIcon icon={<IoLogoJavascript size={24} />} label="JavaScript" />
+							<SkillIcon icon={<FaReact size={24} />} label="React" />
+							<SkillIcon icon={<RiNextjsFill size={26} />} label="Next.js" />
+							<SkillIcon
+								icon={<RiTailwindCssFill size={24} />}
+								label="Tailwind CSS"
+							/>
+							<SkillIcon icon={<SiNestjs size={24} />} label="NestJS" />
+							<SkillIcon icon={<SiSupabase size={24} />} label="Supabase" />
+							<SkillIcon icon={<SiPostgresql size={24} />} label="PostgreSQL" />
+							<SkillIcon icon={<FaDocker size={24} />} label="Docker" />
 						</div>
-						{/* <Curriculo tecnologias={tecnologias.destaques} /> */}
-						<h1
-							className={`${fonteKalam.className} text-xl font-bold animate-gradient-text`}
+
+						<div className="space-y-5">
+							<h1
+								className={`${fontJetBrainsMono.className} text-sm font-medium text-muted-foreground tracking-[0.2em] uppercase`}
+							>
+								{translate("about.title")}
+							</h1>
+
+							<h2
+								className={`${fontSatoshi.className} text-foreground text-2xl sm:text-4xl font-semibold leading-tight tracking-tight`}
+							>
+								{translate("about.heading")}
+							</h2>
+						</div>
+
+						<div
+							className={`${fontSatoshi.className} space-y-5 text-muted text-base sm:text-lg leading-[1.55] max-w-2xl font-light`}
 						>
-							About me
-						</h1>
-						<h2 className="text-zinc-100 text-xl py-2">
-							I’m a passionate software developer looking for my first international
-							oppotunity
-						</h2>
-						<h3 className="text-zinc-400 text-sm py-2">
-							Beyond coding, I'm a coffee enthusiast, a cat lover, and a self-taught
-							artist who enjoys spending my free time doodling. I am currently seeking
-							opportunities to bring my skills and enthusiasm to a tech company in the
-							United States or Europe and am excited about the prospect of relocating
-							to pursue new challenges.
-						</h3>
-						<button className="animated-button flex items-center justify-center gap-1 text-white text-base w-[167px] h-[56px] rounded-lg px-4 py-2 mt-5 transition-transform duration-200">
-							<Image src="/ReadCvLogo.png" alt="Logo" width={20} height={0} />
-							My resume
-						</button>
+							<p>{translate("about.paragraph1")}</p>
+							<p>{translate("about.paragraph2")}</p>
+						</div>
+
+						<Link
+							href="/#contact"
+							className="group relative flex items-center justify-center gap-3 text-foreground font-medium h-[52px] rounded-full border border-border-theme bg-card backdrop-blur-md hover:bg-card/80 hover:border-muted transition-all duration-300 px-8"
+						>
+							<Send
+								size={16}
+								className="text-muted group-hover:text-foreground transition-colors"
+							/>
+							<span>{translate("about.contactButton")}</span>
+						</Link>
 					</div>
 				</div>
 			</div>
+		</section>
+	)
+}
+
+function SkillIcon({ icon, label }: { icon: React.ReactNode; label: string }) {
+	return (
+		<div
+			className="text-muted hover:text-foreground hover:-translate-y-1 transition-all duration-300 ease-out cursor-default"
+			title={label}
+		>
+			{icon}
 		</div>
 	)
 }

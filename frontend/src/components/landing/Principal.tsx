@@ -1,80 +1,181 @@
-import Cabecalho from "../shared/Cabecalho"
+"use client"
+
+import { fonteKalam, fontSatoshi } from "@/app/fonts"
+import { useLanguage } from "@/contexts/LanguageContext"
+import { motion } from "framer-motion"
+import { ChevronDown, Github, Linkedin, MessageCircle } from "lucide-react"
 import Image from "next/image"
-import Container from "../shared/Container"
-import { fonteKalam } from "@/app/layout"
+import Link from "next/link"
+import { useEffect, useState } from "react"
+import Cabecalho from "../shared/Cabecalho"
+
+const TypingEffect = ({ text, delay = 0 }: { text: string; delay?: number }) => {
+	const [displayedText, setDisplayedText] = useState("")
+
+	useEffect(() => {
+		const timeout = setTimeout(() => {
+			let i = 0
+			const timer = setInterval(() => {
+				if (i < text.length) {
+					setDisplayedText(text.substring(0, i + 1))
+					i++
+				} else {
+					clearInterval(timer)
+				}
+			}, 100)
+			return () => clearInterval(timer)
+		}, delay * 1000)
+
+		return () => clearTimeout(timeout)
+	}, [text, delay])
+
+	return <span>{displayedText}</span>
+}
 
 export default function Principal() {
+	const [isVisible, setIsVisible] = useState(true)
+	const { translate } = useLanguage()
+
+	useEffect(() => {
+		const handleScroll = () => {
+			const scrollThreshold = 100
+			if (window.scrollY > scrollThreshold) {
+				setIsVisible(false)
+			} else {
+				setIsVisible(true)
+			}
+		}
+
+		window.addEventListener("scroll", handleScroll)
+		return () => window.removeEventListener("scroll", handleScroll)
+	}, [])
+
 	return (
-		<div className="flex flex-col h-full sm:h-[600px] bg-neutral-900 ">
+		<div
+			id="home"
+			className="relative min-h-screen flex flex-col overflow-hidden scroll-mt-14 sm:scroll-mt-16"
+		>
+			<div className="absolute top-0 left-0 w-full h-full pointer-events-none z-0">
+				<div className="absolute bottom-[10%] left-[-5%] w-[400px] h-[400px] bg-purple-600/10 rounded-full blur-[100px]" />
+			</div>
+
 			<Cabecalho />
-			<div className="w-full h-full flex items-center pb-12 sm:pb-0 sm:pt-10">
-				<div className="flex-1 h-full flex sm:flex-row flex-col justify-between items-center max-w-6xl mx-auto px-4">
-					<div className="sm:order-2 py-10 sm:py-0">
-						<div className="fade-in-up">
+
+			<main className="flex-1 flex items-center justify-center relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+				<div className="flex flex-col-reverse lg:flex-row items-center justify-between w-full gap-12 lg:gap-8">
+					<div className="flex-1 flex flex-col items-center lg:items-start text-center lg:text-left space-y-6">
+						<motion.h1
+							initial={{ opacity: 0, y: 20 }}
+							animate={{ opacity: 1, y: 0 }}
+							transition={{ duration: 0.5 }}
+							className={`${fonteKalam.className} text-4xl sm:text-5xl lg:text-6xl font-bold animate-hero-gradient pb-2`}
+						>
+							{translate("hero.greeting")}
+						</motion.h1>
+
+						<motion.div
+							initial={{ opacity: 0 }}
+							animate={{ opacity: 1 }}
+							transition={{ delay: 0.5, duration: 0.5 }}
+							className="text-xl sm:text-2xl text-muted-subtitle font-mono h-8 sm:h-auto"
+						>
+							&gt; <TypingEffect text={translate("hero.role")} delay={0.5} />
+							<span className="animate-pulse">_</span>
+						</motion.div>
+
+						<motion.p
+							initial={{ opacity: 0, y: 20 }}
+							animate={{ opacity: 1, y: 0 }}
+							transition={{ delay: 1.5, duration: 0.5 }}
+							className={`${fontSatoshi.className} text-muted text-base sm:text-lg max-w-lg leading-relaxed`}
+						>
+							{translate("hero.description")}
+						</motion.p>
+
+						<motion.div
+							initial={{ opacity: 0, y: 20 }}
+							animate={{ opacity: 1, y: 0 }}
+							transition={{ delay: 2, duration: 0.5 }}
+							className="flex items-center gap-4 pt-4"
+						>
+							<SocialButton
+								href="https://github.com/AlexandreGomes08"
+								icon={<Github size={20} />}
+								label="GitHub"
+							/>
+							<SocialButton
+								href="https://www.linkedin.com/in/alexandregomesdev/"
+								icon={<Linkedin size={20} />}
+								label="LinkedIn"
+							/>
+							<SocialButton
+								href="https://wa.me/5588999109162"
+								icon={<MessageCircle size={20} />}
+								label="WhatsApp"
+							/>
+						</motion.div>
+					</div>
+
+					<motion.div
+						initial={{ opacity: 0, scale: 0.9 }}
+						animate={{ opacity: 1, scale: 1 }}
+						transition={{ duration: 0.7 }}
+						className="relative flex items-center justify-center group"
+					>
+						<div className="absolute inset-0 -m-12 bg-blue-600/20 rounded-full blur-[80px] animate-pulse pointer-events-none group-hover:bg-blue-500/30 transition-colors duration-700" />
+
+						<div className="relative w-56 h-56 sm:w-72 sm:h-72 lg:w-85 lg:h-85 rounded-full overflow-hidden shadow-2xl transition-transform duration-500 ">
 							<Image
-								className="rounded-full animated-border p-1 sm:p-1.5 w-[280px] sm:w-[340px] "
-								src="/minha-foto.jpeg"
-								alt="Logo"
-								width={340}
-								height={0}
+								src="/minha-foto0.jpg"
+								alt="Alexandre Gomes"
+								fill
+								className="object-cover"
+								priority
 							/>
 						</div>
-					</div>
-					<div className="fade-in-up">
-						<div className=" max-w-2xl flex flex-col sm:order-1">
-							<h1
-								className={`${fonteKalam.className} text-4xl sm:text-[40px] font-bold py-4 
-    						animate-gradient-text`}
-							>
-								Hi, I’m Alexandre Gomes
-							</h1>
-							{/* <p className="text-3xl font-bold animate-gradient-text">
-							Texto com gradiente animado
-						</p> */}
-							<h2 className="text-zinc-100 text-2xl sm:text-xl py-2">
-								Full-stack developer and innovation enthusiast
-							</h2>
-							<h3 className="text-zinc-400 text-base py-2 px-2 sm:px-0">
-								Over 4 years of experience in the tech industry. I specialize in
-								building innovative web and mobile applications using technologies
-								such as React, React Native, and Node.js.
-							</h3>
-							<div className="flex flex-row gap-3 justify-center sm:justify-start pt-4 sm:pt-0">
-								{/* <button className="bg-gradient-to-r from-zinc-600 to-zinc-500 flex items-center justify-center gap-1 text-zinc-100 text-base w-[167px] h-[56px] rounded-lg py-2 mt-5 transition-transform duration-200">
-								<Image src="/ReadCvLogo.png" alt="Logo" width={20} height={0} />
-								My resume
-							</button> */}
-
-								{/* <button className="bg-gradient-to-r from-cyan-500 to-sky-700 flex items-center justify-center gap-1 w-[167px] h-[56px] text-zinc-100 text-base rounded-lg py-2 mt-5 transition-transform duration-200">
-								Get in touch
-								<Image src="/seta.png" alt="Logo" width={16} height={0} />
-							</button> */}
-								<div className="relative group mt-5">
-									<div className="relative w-67 h-14 opacity-90 overflow-hidden rounded-xl bg-black z-10">
-										<div className="absolute z-10 -translate-x-44 group-hover:translate-x-[30rem] ease-in transistion-all duration-700 h-full w-44 bg-gradient-to-r from-gray-500 to-white/10 opacity-30 -skew-x-12"></div>
-
-										<div className="absolute flex items-center justify-center text-white z-[1] opacity-90 rounded-2xl inset-0.5 bg-black">
-											<button
-												name="text"
-												className="flex items-center justify-center input font-semibold text-lg h-full opacity-90 w-full gap-2 rounded-xl bg-black"
-											>
-												Get in touch
-												<Image
-													src="/seta.png"
-													alt="Logo"
-													width={16}
-													height={0}
-												/>
-											</button>
-										</div>
-										<div className="absolute duration-1000 group-hover:animate-spin w-full h-[100px] bg-gradient-to-r from-cyan-300 to-sky-400 blur-[30px]"></div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
+					</motion.div>
 				</div>
-			</div>
+			</main>
+
+			<motion.div
+				initial={{ opacity: 0 }}
+				animate={{ opacity: isVisible ? 0.4 : 0 }}
+				transition={{ duration: 0.5 }}
+				className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1 z-20 pointer-events-none"
+			>
+				<motion.div
+					animate={{ y: [0, 6, 0] }}
+					transition={{
+						duration: 2.5,
+						repeat: Infinity,
+						ease: "easeInOut",
+					}}
+				>
+					<ChevronDown size={28} className="text-muted" />
+				</motion.div>
+			</motion.div>
 		</div>
+	)
+}
+
+function SocialButton({
+	href,
+	icon,
+	label,
+}: {
+	href: string
+	icon: React.ReactNode
+	label: string
+}) {
+	return (
+		<Link
+			href={href}
+			target="_blank"
+			className="group flex items-center justify-center p-3 sm:px-5 sm:py-3 gap-2 rounded-full border border-border-theme bg-card/50 backdrop-blur-sm text-muted hover:text-foreground hover:border-muted/50 hover:bg-card transition-all duration-300"
+			aria-label={label}
+		>
+			{icon}
+			<span className="hidden sm:inline font-medium text-sm">{label}</span>
+		</Link>
 	)
 }

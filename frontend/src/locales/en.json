@@ -1,0 +1,190 @@
+{
+	"menu": {
+		"home": "Home",
+		"about": "About",
+		"projects": "Projects",
+		"experience": "Experience",
+		"contact": "Contact"
+	},
+	"hero": {
+		"greeting": "Hi, I'm Alexandre Gomes",
+		"role": "Full Stack Developer",
+		"description": "Over 2 years of experience building innovative web and mobile applications using React, Next.js, and Nest.js."
+	},
+	"about": {
+		"title": "About me",
+		"heading": "I am a passionate software developer looking for opportunity.",
+		"paragraph1": "I am a full stack developer with professional experience since 2024, currently pursuing a degree in Computer Engineering at the Federal University of Ceará.",
+		"paragraph2": "Based in Hidrolândia, Ceará, Brazil, I have hands-on experience building mobile applications and RESTful APIs, always focusing on clean, well-structured, and maintainable code.",
+		"contactButton": "Contact me"
+	},
+	"projects": {
+		"title": "Projects",
+		"heading": "Building",
+		"headingHighlight": "scalable",
+		"headingSuffix": "digital solutions",
+		"items": [
+			{
+				"id": 1,
+				"title": "APPI",
+				"category": "Mobile • Web • Dashboard",
+				"period": "Nov 2024 - Jun 2025",
+				"shortDescription": "A cross-platform app built with React Native, featuring a Next.js admin dashboard and a Nest.js API with PostgreSQL.",
+				"technicalBlock": {
+					"problem": "Complex data presentation was slowing down decision-making for operations managers.",
+					"solution": "Implemented an intuitive React-based dashboard with optimized state management and custom charting.",
+					"result": "40% reduction in time-to-insight and 2.5x faster page loads compared to legacy system."
+				},
+				"techStack": [
+					"React Native",
+					"Next.js",
+					"TypeScript",
+					"TailwindCSS",
+					"Nest.js",
+					"PostgreSQL"
+				],
+				"links": {
+					"playstore": "https://play.google.com/store/apps/details?id=com.uxsoftware.appi",
+					"appstore": "https://apps.apple.com/us/app/appi/id6636485164",
+					"dashboard": "https://appiprovedor.vercel.app/login"
+				},
+				"image": "/projetos/appi.png",
+				"visual": "linear-gradient(135deg, #6366f1 0%, #a855f7 100%)"
+			},
+			{
+				"id": 2,
+				"title": "VoltekSys Platform",
+				"category": "Web • Dashboard",
+				"period": "Oct 2025 - Feb 2026",
+				"shortDescription": "A multi-tenant solar energy control panel for managing projects and connecting clients, integrators, and designers.",
+				"technicalBlock": {
+					"problem": "Users struggled to track assets across multiple chains with accuracy and low latency.",
+					"solution": "Developed a cross-platform app using React Native with a robust Node.js backend for price aggregation.",
+					"result": "Active user base grew by 150% in 3 months; 99.9% uptime for price streaming."
+				},
+				"techStack": [
+					"Next.js",
+					"Ant Design",
+					"TypeScript",
+					"TailwindCSS",
+					"Nest.js",
+					"PostgreSQL"
+				],
+				"links": {
+					"dashboard": "https://ivsolucoes.volteksys.com.br/admin/login",
+					"github": "#"
+				},
+				"image": "/projetos/solar2.webp",
+				"visual": "linear-gradient(135deg, #a855f7 0%, #3b82f6 100%)"
+			},
+			{
+				"id": 3,
+				"title": "Meu Site Ágil",
+				"category": "Web • Dashboard",
+				"period": "Jun 2025 - Dec 2026",
+				"shortDescription": "Optimized landing page with admin panel, developed in Next.js with TailwindCSS styling.",
+				"technicalBlock": {
+					"problem": "Scaling the monolithic API was becoming impossible due to bottlenecked database connections.",
+					"solution": "Migrated to a NestJS-based microservices architecture with Kafka for event-driven processing.",
+					"result": "Scalability increased by 10x; server costs reduced by 35% through resource optimization."
+				},
+				"techStack": [
+					"React",
+					"Next.js",
+					"TypeScript",
+					"Nest.js",
+					"PostgreSQL",
+					"TailwindCSS"
+				],
+				"links": {
+					"dashboard": "https://www.meusiteagil.com.br/",
+					"github": "#"
+				},
+				"image": "/projetos/msa.png",
+				"visual": "linear-gradient(135deg, #f43f5e 0%, #fb923c 100%)"
+			}
+		]
+	},
+	"experience": {
+		"title": "Career Path",
+		"heading": "Professional Experience",
+		"remote": "Remote",
+		"hybrid": "Hybrid",
+		"onsite": "On-site",
+		"present": "Present",
+		"items": [
+			{
+				"id": 1,
+				"role": "Full Stack Developer",
+				"company": "UX Software",
+				"period": "Sep 2025 - Present",
+				"type": "Sobral - CE",
+				"description": [
+					"Development of responsive landing pages and interfaces using React.js.",
+					"Development and maintenance of cross-platform mobile apps with React Native.",
+					"Integration with REST APIs and database-driven systems.",
+					"App store publications and maintenance (App Store and Google Play).",
+					"Backend integrations and bug fixes using NestJS.",
+					"Version control and collaboration using Git and GitHub.",
+					"System deployments via Vercel and Coolify.",
+					"Client support and participation in weekly alignment meetings."
+				],
+				"techStack": [
+					"React Native",
+					"TypeScript",
+					"NextJS",
+					"PostgreSQL",
+					"NestJS",
+					"REST APIs",
+					"Git",
+					"Docker",
+					"Vercel",
+					"Coolify"
+				]
+			},
+			{
+				"id": 2,
+				"role": "Mobile Developer Intern",
+				"company": "UX Software",
+				"period": "Nov 2024 - Sep 2025",
+				"type": "Sobral - CE",
+				"description": [
+					"Development of custom mobile applications for internet service providers.",
+					"Software maintenance, bug fixing, and technical support.",
+					"Integration with ISP systems through REST APIs.",
+					"Version control using Git and GitHub.",
+					"Expo SDK updates and app compatibility maintenance.",
+					"Support in production issue troubleshooting and client assistance."
+				],
+				"techStack": ["React Native", "Expo", "TypeScript", "REST APIs", "Git"]
+			},
+			{
+				"id": 3,
+				"role": "Data Analysis Scholar",
+				"company": "FUNCAP",
+				"period": "Jun 2024 - Jan 2025",
+				"type": "Remote",
+				"description": [
+					"Development of Python scripts for web scraping and data analysis.",
+					"Automation of data extraction workflows using Selenium.",
+					"Data processing, cleaning, and structuring for backend consumption.",
+					"Support for systems handling large data volumes.",
+					"Application of data handling practices relevant to APIs and integrations."
+				],
+				"techStack": ["Python", "Selenium", "Pandas", "Data Processing", "Web Scraping"]
+			}
+		]
+	},
+	"contact": {
+		"title": "CONTACT",
+		"heading": "Let's build something together.",
+		"description": "I'm currently open to full-time roles, freelance projects, and collaborations.",
+		"descriptionSuffix": "Feel free to reach out — I usually reply within 24 hours.",
+		"availability": "Available for new opportunities"
+	},
+	"footer": {
+		"rights": " All rights reserved.",
+		"madeWith": "Made with",
+		"by": "by"
+	}
+}
